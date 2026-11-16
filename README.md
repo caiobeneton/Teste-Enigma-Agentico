@@ -2,7 +2,7 @@
 
 Uma plataforma de enigmas textuais construída como material de aprendizado: cada tarefa concluída deve ensinar, passo a passo, **como e por que** a solução foi implementada e como reproduzir o resultado.
 
-O MVP está planejado com JavaScript, React, Vite, Express e SQLite. A base JavaScript está organizada em npm workspaces: o frontend React/Vite apresenta somente a pergunta inicial e já pode ser executado e compilado; a API exporta uma fábrica Express vazia, sem servidor ou rotas. Persistência, autenticação, autoria e jogo serão implementados nas tarefas seguintes.
+O MVP está planejado com JavaScript, React, Vite, Express e SQLite. O frontend React/Vite apresenta a pergunta inicial; Express fornece o endpoint de saúde e entrega o build. Persistência, autenticação, autoria e jogo serão implementados nas tarefas seguintes.
 
 ## Executar a base local
 
@@ -25,6 +25,8 @@ npm run dev
 
 Abra o endereço local informado pelo Vite para ver “O que você busca?”. Encerre com `Ctrl+C`. Não há campo de entrada ou fluxo de jogo nesta etapa.
 
+Em outro terminal, execute `npm run dev:api`. O Vite encaminha requisições `/api` ao Express na porta 3000; por exemplo, acesse `http://localhost:5173/api/health` usando a porta informada pelo Vite.
+
 Para gerar os arquivos estáticos e inspecionar o build localmente:
 
 ```powershell
@@ -32,7 +34,7 @@ npm run build
 npm run preview
 ```
 
-O build fica em `web/dist/`. `preview` serve para inspeção local; a entrega integrada em produção com Express será criada na tarefa 1.2.
+O build fica em `web/dist/`. `preview` serve para inspeção local. Para exercitar a entrega integrada localmente após o build, no PowerShell execute `$env:NODE_ENV='production'` e `npm start`; acesse `http://localhost:3000/`. Essa configuração é intermediária: validação de ambiente e segredos será adicionada na tarefa 1.3.
 
 Para conferir a base da API sem abrir porta ou iniciar servidor:
 
@@ -41,7 +43,7 @@ node --check api/src/app.js
 node --input-type=module -e "import { createApp } from './api/src/app.js'; const app = createApp(); console.log(typeof app, typeof app.use);"
 ```
 
-A última linha deve imprimir `function function`: a fábrica retorna uma aplicação Express com o método `use`. Isso comprova importação e criação, sem comprovar endpoints ainda inexistentes. Não há script de execução da API ou suíte de testes nesta base.
+A última linha deve imprimir `function function`: a fábrica retorna uma aplicação Express com o método `use`, sem abrir porta durante a importação.
 
 ## Planejamento e aprendizado
 

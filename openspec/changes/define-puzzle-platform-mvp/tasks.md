@@ -15,7 +15,7 @@ Só marcar `[x]` após conferir solução, verificações pertinentes, registro 
 ## 1. Base JavaScript e execução local
 
 - [x] 1.1 Criar npm workspaces `web` e `api`, com React/Vite, Express e módulos ES; fixar dependências compatíveis com Node 24 LTS atualizado e verificar instalação e build em Windows.
-- [ ] 1.2 Configurar proxy `/api` do Vite, inicialização Express e entrega do build em produção; verificar `/api/health`, navegação direta da SPA e JSON 404 para API inexistente em execução local de produção.
+- [x] 1.2 Configurar proxy `/api` do Vite, inicialização Express e entrega do build em produção; verificar `/api/health`, navegação direta da SPA e JSON 404 para API inexistente em execução local de produção.
 - [ ] 1.3 Definir configuração por ambiente, diretório de dados ignorado, secret obrigatório em produção e scripts de migração/testes; documentar comandos e variáveis no README e validar que a aplicação falha claramente com configuração inválida.
 
 ## 2. SQLite e invariantes de dados
