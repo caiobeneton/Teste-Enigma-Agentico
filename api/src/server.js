@@ -1,6 +1,12 @@
 import { createApp } from "./app.js";
+import { loadConfig, validateStorage } from "./config.js";
 
-const production = process.env.NODE_ENV === "production";
-const port = process.env.PORT || 3000;
-const app = createApp({ production });
-app.listen(port, () => console.log(`Servidor disponível em http://localhost:${port}`));
+try {
+  const config = loadConfig(process.env);
+  validateStorage(config);
+  const app = createApp({ production: config.mode === "production" });
+  app.listen(config.port, () => console.log(`Servidor disponível em http://localhost:${config.port}`));
+} catch (error) {
+  console.error(error.message);
+  process.exitCode = 1;
+}

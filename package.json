@@ -14,6 +14,8 @@
     "dev": "npm run dev --workspace=@nexo/web",
     "dev:api": "npm run dev --workspace=@nexo/api",
     "start": "npm run start --workspace=@nexo/api",
+    "test": "npm run test --workspace=@nexo/api",
+    "migrate": "npm run migrate --workspace=@nexo/api",
     "build": "npm run build --workspace=@nexo/web",
     "preview": "npm run preview --workspace=@nexo/web"
   }
