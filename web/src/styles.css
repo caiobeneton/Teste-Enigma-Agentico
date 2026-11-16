@@ -1,0 +1,22 @@
+:root {
+  font-family: Consolas, "Courier New", monospace;
+  color: #e8e8e8;
+  background: #121212;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  margin: 0;
+}
+
+main {
+  padding: 2rem;
+}
+
+h1 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.5;
+}

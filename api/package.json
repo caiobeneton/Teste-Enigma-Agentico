@@ -1,0 +1,12 @@
+{
+  "name": "@nexo/api",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24.22.3 <25"
+  },
+  "dependencies": {
+    "express": "5.3.0"
+  }
+}

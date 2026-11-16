@@ -1,6 +1,6 @@
 # Tasks
 
-Implementar segundo `design.md` e as quatro capacidades em `specs/`. Todas as tarefas estão pendentes: este change contém planejamento, não código implementado. Limites e textos propostos no design são os padrões de partida para revisão; mudanças no escopo funcional exigem atualização dos artefatos.
+Implementar segundo `design.md` e as quatro capacidades em `specs/`. As marcações abaixo registram o andamento da implementação; os registros e tutoriais de cada tarefa contêm suas entregas e evidências. Limites e textos propostos no design são os padrões de partida para revisão; mudanças no escopo funcional exigem atualização dos artefatos.
 
 ## Critério transversal de conclusão — EDU-01
 
@@ -10,11 +10,11 @@ Seguir `AGENTS.md` e `docs/fluxo-de-trabalho.md` a partir da raiz: gerente coord
 
 Para cada ID, criar `docs/registros/define-puzzle-platform-mvp/<id>.md` e `docs/tutoriais/define-puzzle-platform-mvp/<id>.md`, ligar o registro à tarefa original e atualizar `docs/tutoriais/README.md`. O registro inclui dependências, decisões de arquitetura, arquivos, comandos/resultados reais e revisões; o tutorial inclui pré-requisitos, ponto inicial no Git, passos completos, motivos e verificação. O commit usa o trailer `Task: define-puzzle-platform-mvp/<id>`.
 
-Só marcar `[x]` após conferir solução, verificações pertinentes, registro e tutorial revisados; confirmar a conclusão depois do commit que reúne essas entregas e a marcação. Se o commit falhar, manter a tarefa pendente e registrar `aguardando commit`, conforme o protocolo do fluxo. Código pronto sem tutorial não é tarefa concluída. As 41 tarefas mantêm IDs e escopo; esta atualização não inicia sua implementação.
+Só marcar `[x]` após conferir solução, verificações pertinentes, registro e tutorial revisados; confirmar a conclusão depois do commit que reúne essas entregas e a marcação. Se o commit falhar, manter a tarefa pendente e registrar `aguardando commit`, conforme o protocolo do fluxo. Código pronto sem tutorial não é tarefa concluída. As 41 tarefas mantêm seus IDs e critérios técnicos; este requisito se soma ao aceite de cada uma.
 
 ## 1. Base JavaScript e execução local
 
-- [ ] 1.1 Criar npm workspaces `web` e `api`, com React/Vite, Express e módulos ES; fixar dependências compatíveis com Node 24 LTS atualizado e verificar instalação e build em Windows.
+- [x] 1.1 Criar npm workspaces `web` e `api`, com React/Vite, Express e módulos ES; fixar dependências compatíveis com Node 24 LTS atualizado e verificar instalação e build em Windows.
 - [ ] 1.2 Configurar proxy `/api` do Vite, inicialização Express e entrega do build em produção; verificar `/api/health`, navegação direta da SPA e JSON 404 para API inexistente em execução local de produção.
 - [ ] 1.3 Definir configuração por ambiente, diretório de dados ignorado, secret obrigatório em produção e scripts de migração/testes; documentar comandos e variáveis no README e validar que a aplicação falha claramente com configuração inválida.
 

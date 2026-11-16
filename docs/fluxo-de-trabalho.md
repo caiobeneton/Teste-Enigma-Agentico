@@ -82,7 +82,7 @@ O registro aponta para esse identificador estável e informa o commit-base de pa
 
 ## Ordem orientativa das tarefas já planejadas
 
-As 41 tarefas existentes continuam pendentes e com os mesmos IDs. A ordem abaixo resume dependências por bloco, sem substituí-las por outra fila:
+As 41 tarefas do planejamento inicial mantêm seus IDs; consulte suas marcações no `tasks.md` para o andamento atual. A ordem abaixo resume dependências por bloco, sem substituí-las por outra fila:
 
 1. Base local (`1.*`) antes de persistência e integração executável.
 2. Persistência e invariantes (`2.*`) antes dos serviços que dependem de SQLite e transações.
