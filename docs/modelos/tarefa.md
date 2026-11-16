@@ -1,0 +1,41 @@
+# <ID completo> — <título>
+
+## Identificação e andamento
+
+- Origem: <link para a tarefa OpenSpec ou solicitação de processo>.
+- Status: <pendente | em arquitetura | em implementação | em tutorial | em revisão | pronta para commit | aguardando commit | concluída>.
+- Dependências: <IDs, links e critérios para iniciar>.
+- Ponto inicial: <hash do commit-base e alterações locais preexistentes relevantes>.
+- Papéis: <quem atuou como gerente, arquiteto, programador web e professor>.
+- Tutorial: <link relativo>.
+- Commit de entrega: localizar pelo trailer `Task: <ID completo>`.
+
+## Objetivo e aceite
+
+<Problema, resultado esperado, escopo autorizado e critérios observáveis.>
+
+## Arquitetura
+
+<Antes da implementação: requisitos/specs consultados, dependências, desenho, contratos, invariantes, arquivos previstos, decisões e motivos, alternativas e riscos. Adaptar a tarefas documentais sem inventar aplicação.>
+
+## Implementação ou alteração documental
+
+<Sequência real, arquivos alterados, desvios do plano e decisões conciliadas com o arquiteto.>
+
+## Verificações e evidências
+
+| Tipo | Comando ou procedimento e diretório | Ambiente | Resultado real | Limitação |
+| --- | --- | --- | --- | --- |
+| <teste, manual, leitura, reprodução> | <exato> | <versões pertinentes> | <resultado observado> | <nenhuma ou descrição> |
+
+## Entrega didática
+
+<O professor leu quais arquivos/diff, quais passos foram reproduzidos, se o ambiente foi limpo, quais dependências e explicações foram conferidas e quais lacunas foram corrigidas. Não declarar uma execução que não ocorreu.>
+
+## Revisão do gerente
+
+<Responsável, critérios conferidos, links, registro e tutorial, escopo do commit e decisão de aceite. Só confirmar conclusão após conferir a existência e o conteúdo do commit.>
+
+## Pendências e retomada
+
+<Se houver, bloqueio, responsável, próximo passo e critério para desbloquear. Pendência necessária à entrega impede conclusão.>

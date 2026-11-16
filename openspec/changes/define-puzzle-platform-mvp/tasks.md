@@ -2,6 +2,16 @@
 
 Implementar segundo `design.md` e as quatro capacidades em `specs/`. Todas as tarefas estão pendentes: este change contém planejamento, não código implementado. Limites e textos propostos no design são os padrões de partida para revisão; mudanças no escopo funcional exigem atualização dos artefatos.
 
+## Critério transversal de conclusão — EDU-01
+
+Todas as tarefas abaixo, sem exceção, incluem registro e tutorial próprio em português, didático e reproduzível, explicando passo a passo **como e por que cada etapa foi implementada**. Isso também se aplica às tarefas de documentação, testes e operação. Não é necessário repetir esse requisito em cada linha.
+
+Seguir `AGENTS.md` e `docs/fluxo-de-trabalho.md` a partir da raiz: gerente coordena; arquiteto analisa e desenha; programador web implementa e verifica; professor lê o resultado e escreve as explicações; gerente revisa as entregas e faz o commit local. Use os modelos em `docs/modelos/`.
+
+Para cada ID, criar `docs/registros/define-puzzle-platform-mvp/<id>.md` e `docs/tutoriais/define-puzzle-platform-mvp/<id>.md`, ligar o registro à tarefa original e atualizar `docs/tutoriais/README.md`. O registro inclui dependências, decisões de arquitetura, arquivos, comandos/resultados reais e revisões; o tutorial inclui pré-requisitos, ponto inicial no Git, passos completos, motivos e verificação. O commit usa o trailer `Task: define-puzzle-platform-mvp/<id>`.
+
+Só marcar `[x]` após conferir solução, verificações pertinentes, registro e tutorial revisados; confirmar a conclusão depois do commit que reúne essas entregas e a marcação. Se o commit falhar, manter a tarefa pendente e registrar `aguardando commit`, conforme o protocolo do fluxo. Código pronto sem tutorial não é tarefa concluída. As 41 tarefas mantêm IDs e escopo; esta atualização não inicia sua implementação.
+
 ## 1. Base JavaScript e execução local
 
 - [ ] 1.1 Criar npm workspaces `web` e `api`, com React/Vite, Express e módulos ES; fixar dependências compatíveis com Node 24 LTS atualizado e verificar instalação e build em Windows.

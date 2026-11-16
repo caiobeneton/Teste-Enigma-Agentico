@@ -14,6 +14,7 @@ Este documento contém decisões do planejamento técnico e padrões propostos d
 - Manter validação, autorização e persistência no servidor, com contratos explícitos entre front-end e API.
 - Preservar unicidade, avanço individual, bloqueio global de respostas e exclusão integral sob concorrência.
 - Permitir testar as regras com banco real temporário e os percursos pelo navegador.
+- Entregar cada tarefa como capítulo didático reproduzível, com registro, explicação de como e por que cada etapa foi implementada e commit local conferido, conforme EDU-01.
 
 **Non-Goals:**
 
@@ -187,6 +188,14 @@ Consultas de snapshots também usam leitura consistente do conteúdo e da versã
 - Playwright em build de produção, com duas contas e API real: criar rascunho, sair/retomar, publicar, jogar, pedir dicas, retomar sessão e concluir; validar exclusão e respostas bloqueadas. Usar HTTPS local no harness de testes com certificado descartável, para que os cookies Secure funcionem sem enfraquecer a configuração de produção. Aceitar o certificado somente no navegador de teste, sem publicar chave ou certificado de produção.
 - Inspecionar teclado/foco, celular, contraste e tela inicial sem anúncio de autoria. Conferir que respostas e conteúdo bloqueado não aparecem na rede, DOM ou bundle do cliente de jogo.
 - Testes técnicos de desenvolvimento são distintos da prévia de teste de autores, que continua fora do produto.
+
+## Fluxo educacional e equipe — EDU-01
+
+Além das decisões técnicas acima, toda tarefa seguirá o fluxo de `docs/fluxo-de-trabalho.md` (caminho a partir da raiz): gerente identifica tarefa e dependências; arquiteto registra o desenho e seus motivos; programador web implementa e verifica; professor lê os arquivos efetivos e escreve o tutorial; gerente confere aceite, registro, tutorial e commit local. Os perfis persistentes ficam em `.codex/agents/`, com instruções gerais em `AGENTS.md`.
+
+O registro por tarefa guarda arquitetura, decisões, verificações reais e revisão. O tutorial inclui ponto inicial no Git, pré-requisitos, comandos e arquivos, passos de construção, explicação de como e por que funcionam, resultados esperados e resolução de problemas. Os modelos e convenções de caminhos estão em `docs/modelos/` e no fluxo. Os tutoriais seguem as dependências de aprendizado desde o bootstrap; não são adiados para a entrega do piloto.
+
+EDU-01 é um critério de engenharia e ensino, incluindo tarefas documentais e correções; não acrescenta telas ou funcionalidades ao produto. `[x]` só atesta uma tarefa com entregas verificadas e commit confirmado. As definições dos agentes orientam sessões ativas, sem criar um serviço de acompanhamento contínuo ou validação automática de qualidade.
 
 ## Risks / Trade-offs
 

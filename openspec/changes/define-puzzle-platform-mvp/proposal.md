@@ -8,6 +8,14 @@ Criar uma plataforma comunitária de enigmas inspirada em Alternate Reality Game
 
 ## What Changes
 
+### Requisito transversal de entrega educacional — EDU-01
+
+Por solicitação de 16/11/2026, o projeto também será um tutorial de programação web. Toda tarefa concluída, inclusive documentação, configuração, testes, correções e refatorações, exige registro e tutorial próprio, didático e reproduzível, explicando passo a passo como e por que cada etapa foi implementada. O tutorial deve refletir os arquivos efetivamente entregues e as verificações realmente realizadas.
+
+A equipe passa a trabalhar com quatro papéis: arquiteto para analisar tarefas e desenhar a solução; programador web para implementá-la; professor para ler o resultado e explicar sua construção; gerente para acompanhar dependências e andamento, conferir registros e tutoriais e realizar um commit local por tarefa concluída. As regras e critérios estão em `docs/fluxo-de-trabalho.md`, na raiz do repositório, e os perfis em `.codex/agents/`.
+
+Esse requisito se aplica a todas as tarefas existentes e futuras, sem alterar as funcionalidades do MVP nem autorizar sua implementação nesta solicitação. As quatro capacidades funcionais em `specs/` permanecem com seu escopo atual.
+
 ### Visão e requisitos confirmados
 
 - Interface simples e direta, com aparência de terminal de linha de comando.

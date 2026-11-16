@@ -1,5 +1,31 @@
 schema: spec-driven
 
+context: |
+  Este projeto deve se tornar um tutorial de programação web em português.
+  EDU-01: toda tarefa concluída, incluindo código, configuração, testes,
+  documentação e correções, exige registro e tutorial didático reproduzível
+  explicando passo a passo como e por que cada etapa foi implementada.
+  Seguir AGENTS.md e docs/fluxo-de-trabalho.md. A equipe é composta por
+  arquiteto, programador_web, professor e gerente; o gerente verifica as
+  entregas e realiza o commit local por tarefa concluída.
+
+rules:
+  proposal:
+    - Preservar EDU-01 como requisito transversal de entrega, sem confundi-lo com funcionalidades do produto.
+  design:
+    - Considerar a sequência de aprendizado, as decisões explicáveis e a reprodução local ao desenhar a solução.
+  tasks:
+    - Toda tarefa só pode ser concluída com registro, tutorial próprio revisado, verificações pertinentes e commit local conferido, conforme docs/fluxo-de-trabalho.md.
+    - Preservar IDs estáveis e a fila canônica; tutoriais acompanham cada tarefa e não ficam adiados para o final do projeto.
+
+operations:
+  apply:
+    guidance:
+      - Coordenar arquiteto, programador_web, professor e gerente; seguir AGENTS.md e EDU-01 antes de marcar tarefas como concluídas.
+  archive:
+    guidance:
+      - Conferir registros, tutoriais, evidências e commits das tarefas antes do arquivamento; planejamento completo não significa implementação concluída.
+
 # Project context (optional)
 # Add only constraints that should guide OpenSpec artifacts and workflows.
 # Include constraints an agent cannot infer by reading the code.
