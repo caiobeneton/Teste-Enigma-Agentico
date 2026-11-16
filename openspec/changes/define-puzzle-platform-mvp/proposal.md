@@ -1,6 +1,6 @@
 # Proposal
 
-Registro da descoberta em 15/11/2026. O escopo funcional do MVP foi aprovado na conversa, mantendo as pendências de detalhamento explicitadas neste documento. Propostas ainda não aprovadas permanecem identificadas como tal. Este registro não autoriza implementação nem define stack.
+Registro da descoberta em 15/11/2026. O escopo funcional do MVP e a stack descrita neste documento foram aprovados na conversa, mantendo as pendências de detalhamento explicitadas. Propostas ainda não aprovadas permanecem identificadas como tal. Este registro não autoriza implementação.
 
 ## Why
 
@@ -13,7 +13,7 @@ Criar uma plataforma comunitária de enigmas inspirada em Alternate Reality Game
 - Interface simples e direta, com aparência de terminal de linha de comando.
 - No MVP, o conteúdo dos enigmas será exclusivamente textual: enunciados, dicas, respostas e mensagens de conclusão.
 - A comunidade cria e joga enigmas. Cada jogador joga sozinho, com progresso individual e linear; não haverá equipes nem desbloqueio coletivo.
-- O autor escolhe quantas etapas terá o enigma e cadastra as perguntas/enunciados e respostas corretas. Pode também registrar dicas. Os detalhes da interface de autoria serão elaborados futuramente.
+- O autor escolhe quantas etapas terá o enigma e cadastra as perguntas/enunciados e respostas corretas. Pode também registrar dicas. O desenho proposto da interface de autoria está em `design.md`.
 - O autor pode salvar um enigma incompleto e continuar sua elaboração em outro acesso.
 
 ### Áreas de jogadores e criadores
@@ -35,7 +35,7 @@ Criar uma plataforma comunitária de enigmas inspirada em Alternate Reality Game
 5. Para um nome de usuário inexistente, antes de pedir a senha, exibe-se exatamente **“Não conhecemos você. Novo por aqui? (y/n)”**. Com `y` ou `Y`, pergunta-se **“Qual é a senha?”** e conclui-se o cadastro após obter a senha. Com `n` ou `N`, retorna-se à pergunta **“Quem você é?”**, sem solicitar a senha nessa tentativa.
 6. Na interface de jogo, o usuário não recebe a opção de criar um enigma. A criação terá sua área separada, com acesso de criador.
 
-Enquanto houver uma sessão ativa, ela é reutilizada: ao informar outro enigma ou digitar **“acessar o nexo”**, a pessoa segue para o destino sem repetir usuário e senha. A apresentação detalhada do cadastro/login na área de criadores ainda será definida.
+Enquanto houver uma sessão ativa, ela é reutilizada: ao informar outro enigma ou digitar **“acessar o nexo”**, a pessoa segue para o destino sem repetir usuário e senha. A apresentação proposta do cadastro/login na área de criadores reutiliza o fluxo de identificação conforme `design.md`.
 
 A recuperação de acesso fica fora do MVP. Perder a senha significa perder o acesso à conta nesta versão, incluindo seu progresso e a manutenção dos enigmas de sua autoria. Isso não equivale a excluir a conta ou seus enigmas.
 
@@ -55,6 +55,7 @@ A recuperação de acesso fica fora do MVP. Perder a senha significa perder o ac
 - Durante a partida, o jogador vê apenas a etapa atual. O MVP não oferece consulta ou navegação para etapas já resolvidas; o progresso continua sendo salvo para retomar a etapa atual.
 - Durante o jogo, o comando **`/inicio`** retorna à pergunta **“O que você busca?”**, preservando a sessão e o progresso. A partir da entrada, o jogador pode informar outro enigma ou acessar a área de criadores.
 - Inicialmente, as respostas são apenas texto. Cada etapa tem uma única resposta correta cadastrada, sem respostas alternativas.
+- Os textos equivalentes a `/dica` e `/inicio` são reservados como comandos e não podem ser cadastrados como respostas corretas. Essa reserva foi confirmada durante o planejamento técnico e segue a comparação das respostas.
 - A comparação das respostas ignora maiúsculas, minúsculas e espaços no início e no fim. Acentos, pontuação e espaços internos continuam significativos: ` lua ` equivale a `lua`, mas `satelite` é diferente de `satélite`. Cada etapa continua tendo apenas uma resposta cadastrada, sem alternativas.
 - Uma resposta correta libera a próxima etapa apenas para aquele jogador. Uma resposta incorreta mantém o jogador na etapa atual.
 - As tentativas de resposta são ilimitadas no MVP. Respostas incorretas não causam perda de progresso nem reinício de etapas já resolvidas.
@@ -82,7 +83,7 @@ A recuperação de acesso fica fora do MVP. Perder a senha significa perder o ac
 - Ao acessar novamente um enigma concluído, o jogador vê o estado “concluído” e a mensagem final. O enigma permanece concluído para ele e não há opção de reiniciar a partida no MVP.
 - Durante a criação, o autor pode definir uma mensagem de conclusão personalizada ou manter a mensagem padrão da plataforma. A personalização é opcional.
 - O autor pode editar a mensagem final personalizada após a publicação. O texto atualizado é exibido também para quem retornar a um enigma já concluído.
-- O texto da mensagem padrão da plataforma ainda será definido.
+- O texto padrão sugerido para revisão editorial está em `design.md`; não foi aprovado individualmente durante a descoberta.
 
 ### Publicação e edição
 
@@ -115,7 +116,7 @@ Os critérios de avaliação do piloto serão qualitativos:
 
 Validar o percurso completo: com uma conta única, o criador acessa sua área pelo comando “acessar o nexo”, cria um enigma com possibilidade de salvar e retomar rascunhos e confirma sua publicação quando os critérios forem atendidos. Um jogador encontra o enigma pelo nome, se identifica, avança sozinho pelas etapas textuais, solicita dicas por comando e retoma seu progresso em acessos futuros. Ao acertar a última etapa, conclui o enigma e recebe a mensagem final personalizada ou padrão. Aplicar as regras acordadas de nomes, validação de respostas e edição após publicação.
 
-A aparência de terminal, o conteúdo exclusivamente textual e as regras descritas fazem parte do escopo funcional aprovado. Permanecem detalhes de autoria, navegação e operação a definir. Pistas físicas são contempladas como indicações de lugares pelo autor, com avanço validado exclusivamente pela resposta textual do jogador. Ranking, comentários, catálogo público e monetização não integram o escopo aprovado e não foram priorizados como trabalho futuro.
+A aparência de terminal, o conteúdo exclusivamente textual e as regras descritas fazem parte do escopo funcional aprovado. O planejamento técnico propõe os detalhes de autoria, navegação e operação em `design.md`, sujeitos à revisão dos artefatos. Pistas físicas são contempladas como indicações de lugares pelo autor, com avanço validado exclusivamente pela resposta textual do jogador. Ranking, comentários, catálogo público e monetização não integram o escopo aprovado e não foram priorizados como trabalho futuro.
 
 Ficam fora do MVP, conforme as decisões da descoberta:
 
@@ -127,26 +128,31 @@ Ficam fora do MVP, conforme as decisões da descoberta:
 - Sistema de denúncias e painel de moderação.
 - Conteúdo não textual nos enigmas.
 
-### Decisões pendentes
+### Detalhamento proposto e pendências para revisão
 
-- **Identidade e sessão:** limites dos nomes de usuário; apresentação do fluxo de cadastro/login aos criadores; senha incorreta; entradas diferentes de `y/Y/n/N`. A comparação dos nomes de usuário já está definida. A sessão ativa é reutilizada entre enigmas e na área de criadores. A confirmação de novo usuário acontece antes de pedir a senha; a recuperação de acesso está fora do MVP.
-- **Entrada e descoberta:** distribuição ou descoberta inicial do comando de criadores; comportamento para enigma inexistente ou indisponível; comparação dos comandos quanto a maiúsculas e espaços; detalhes da navegação na área de criadores e encerramento da sessão. O retorno do jogo à entrada usa `/inicio`, preservando sessão e progresso. Os nomes “criar um novo nexo” e “acessar o nexo” já estão reservados.
-- **Autoria e publicação:** campos e limites, máximo de etapas e de dicas, detalhes da interface de autoria e confirmação de exclusão. Os rascunhos são salvos manualmente, com confirmação, e podem ser retomados na área de criadores. A reserva do nome ocorre já no rascunho. A exclusão de rascunhos e publicados apaga todo o conteúdo e progresso vinculado e libera o nome para qualquer criador; a pausa pelo autor está fora do MVP.
-- **Respostas:** mensagens de erro. As tentativas são ilimitadas e não há perda de progresso por erro. A comparação quanto a maiúsculas, minúsculas, espaços, acentos e pontuação já está definida; alterações permitidas passam a valer imediatamente para os próximos envios.
-- **Progresso e conclusão:** texto da mensagem final padrão. Durante a partida, apenas a etapa atual fica disponível. O retorno a um enigma concluído exibe seu estado e a mensagem final atualizada, sem opção de reiniciar a partida no MVP. A mensagem personalizada pode ser editada após a publicação.
-- **Pistas físicas:** tratamento de pistas removidas e lugares indisponíveis ou inacessíveis e orientações para participação segura. A validação do avanço por resposta textual, sem comprovação de presença, já está definida.
-- **Operação do piloto:** procedimento para tratar enigmas incorretos ou abandonados, respeitando as regras de edição e exclusão já acordadas. Os relatos de problemas serão feitos diretamente ao responsável pela plataforma; sistema de denúncias e painel de moderação estão fora do MVP.
+O escopo funcional e a stack permanecem aprovados. A confirmação adicional de reservar `/dica` e `/inicio` como respostas também está registrada. Os artefatos técnicos propõem a execução desse escopo; limites, redações e escolhas técnicas não são apresentados como aprovações individuais feitas na descoberta.
+
+| Assunto antes pendente | Encaminhamento no planejamento |
+| --- | --- |
+| Identificação, sessões e falhas | `specs/user-identity/spec.md` e design, decisões 2, 3 e 6. |
+| Entrada, comparação de comandos e retorno | `specs/terminal-entry/spec.md` e design, decisões 2–4. |
+| Autoria, publicação, confirmação de exclusão e limites | `specs/puzzle-authoring/spec.md` e design, decisões 2, 3, 7 e 8. |
+| Mensagens de erro e conclusão padrão | Redações propostas na decisão 3 e contrato de erros na decisão 7 do design; podem ser ajustadas editorialmente. |
+| Banco, API, autenticação e concorrência | Decisões 4–8 do design, com tarefas e verificações em `tasks.md`. |
+| Enigmas problemáticos e pistas físicas | Relatos diretos; o autor pode corrigir os campos permitidos ou excluir/recriar. Sem pausa, override de respostas ou ferramenta de moderação. Orientações e logística do piloto serão preparadas na entrega. |
+
+Permanecem para a preparação do piloto: provedor, domínio e configuração concreta de HTTPS/volume, forma de comunicar o comando aos primeiros criadores e revisão dos textos/limites propostos. Essas escolhas não alteram a divisão de tarefas nem acrescentam funcionalidades ao MVP.
 
 ### Casos extremos e riscos a considerar
 
 | Situação | Consequência a considerar |
 | --- | --- |
-| Duas pessoas tentam registrar o mesmo nome de enigma | Apenas uma poderá obter aquele nome; falta definir o retorno à outra. |
+| Duas pessoas tentam registrar o mesmo nome de enigma | Apenas uma poderá obter aquele nome; a API proposta retorna conflito à outra, preservando sua edição local. |
 | A primeira solução ocorre ao mesmo tempo que uma edição de resposta | A validação deve respeitar a resposta vigente e o bloqueio global deve impedir alterações posteriores ao primeiro acerto; a implementação precisa preservar essas regras em operações concorrentes. |
 | A resposta muda enquanto o jogador está lendo a etapa | Pela regra aprovada, vale a resposta vigente na validação; uma tentativa baseada no conteúdo anterior pode ser rejeitada. |
 | O enunciado muda após a resposta ficar bloqueada | A pergunta pode deixar de corresponder à resposta, tornando a etapa insolúvel. |
-| O autor cadastra uma resposta errada | A etapa pode ficar insolúvel; falta definir o tratamento de etapas problemáticas, considerando os bloqueios de edição já acordados. |
-| Uma solução é compartilhada ou descoberta por tentativas automáticas | O avanço pode ocorrer sem a resolução pretendida; falta decidir o nível de controle desejado. |
+| O autor cadastra uma resposta errada | A etapa pode ficar insolúvel; o plano prevê relato direto e correção dos campos permitidos ou exclusão/recriação, respeitando o bloqueio da resposta. |
+| Uma solução é compartilhada ou descoberta por tentativas automáticas | O avanço pode ocorrer sem a resolução pretendida. O plano não acrescenta anti-cheat ou limite de tentativas de jogo ao piloto. |
 | Nome de usuário digitado incorretamente | A confirmação de cadastro reduz, mas não elimina, a criação acidental de outra identidade. |
 | Pista física removida, local fechado ou acesso inadequado | O jogador pode ficar impedido de continuar ou ser exposto a risco. |
 
@@ -154,7 +160,7 @@ Ficam fora do MVP, conforme as decisões da descoberta:
 
 ### New Capabilities
 
-Organização proposta para futuras especificações; os arquivos de specs ainda não foram criados:
+As capacidades abaixo estão detalhadas nos arquivos correspondentes em `specs/` desta mudança:
 
 - `terminal-entry`: entrada por intenção, acesso discreto à área de criadores por “acessar o nexo”, localização de enigma por nome e retorno à entrada pelo comando `/inicio`.
 - `user-identity`: conta única para cadastro e login nas áreas de jogador e criador.
@@ -167,6 +173,15 @@ Nenhuma. Não havia especificações existentes no projeto durante o registro.
 
 ## Impact
 
-Este artefato preserva a descoberta de produto para orientar as próximas conversas. O planejamento permanece parcial: specs, design e tarefas não foram produzidos. Não foram escolhidos stack, APIs, banco de dados ou integrações, nem escrito código de produto.
+Este artefato preserva a descoberta de produto e a escolha da stack. O planejamento técnico está detalhado nas quatro specs, em `design.md` e em `tasks.md`, incluindo modelo de dados, API, sessões, concorrência e verificações. Os artefatos estão disponíveis para revisão; nenhum código de produto foi escrito.
 
-O escopo funcional do MVP está aprovado. As pendências de detalhamento e as propostas ainda não aprovadas precisam de discussão antes de serem tratadas como requisitos confirmados. `openspec-propose` pode completar os artefatos de planejamento a partir deste registro; a implementação ocorre posteriormente, a partir da mudança planejada.
+### Stack aprovada
+
+- **Linguagem da aplicação:** JavaScript, incluindo JSX nos componentes React.
+- **Front-end:** React com Vite.
+- **Back-end:** Node.js com Express.
+- **Banco de dados:** SQLite.
+
+A hospedagem concreta ainda será definida e deverá preservar os dados do SQLite entre reinícios e implantações. O design propõe uma instância Express, `better-sqlite3` e sessões persistidas no mesmo banco; essas são escolhas do planejamento técnico para revisão.
+
+O escopo funcional do MVP está aprovado. Os artefatos produzidos por `openspec-propose` completam o planejamento desta mudança. Após sua revisão, a implementação pode prosseguir pelo fluxo `openspec-apply-change` mediante nova solicitação; concluir o planejamento não inicia a implementação.
