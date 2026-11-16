@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="data:," />
+    <title>Nexo — folha visual UI/UX</title>
+    <style>
+      :root {
+        --nexo-bg: #050805;
+        --nexo-surface: #0c140f;
+        --nexo-text: #c7f5cf;
+        --nexo-muted: #95b69d;
+        --nexo-accent: #45ff79;
+        --nexo-control-border: #60896b;
+        --nexo-line: #28422f;
+        --nexo-focus: #e6ffe9;
+        --nexo-warning: #f4c56a;
+        --nexo-danger: #ff9b9b;
+        --nexo-font: Consolas, "Liberation Mono", "Courier New", monospace;
+        --nexo-radius: 4px;
+        --nexo-space-1: 4px;
+        --nexo-space-2: 8px;
+        --nexo-space-3: 12px;
+        --nexo-space-4: 16px;
+        --nexo-space-6: 24px;
+        --nexo-space-8: 32px;
+        --nexo-space-12: 48px;
+        color-scheme: dark;
+        font-family: var(--nexo-font);
+        color: var(--nexo-text);
+        background: var(--nexo-bg);
+        line-height: 1.6;
+      }
+
+      * { box-sizing: border-box; }
+      body { margin: 0; }
+      a { color: var(--nexo-accent); text-underline-offset: 4px; }
+      a:hover { color: var(--nexo-focus); }
+      :focus-visible { outline: 2px solid var(--nexo-focus); outline-offset: 3px; }
+      h1, h2, h3, p { margin: 0; }
+      h1 { font-size: clamp(1.5rem, 4vw, 2rem); line-height: 1.3; }
+      h2 { font-size: 1.125rem; line-height: 1.4; }
+      h3 { font-size: 1rem; }
+      code { font-family: inherit; overflow-wrap: anywhere; }
+      .sheet { max-width: 1120px; padding: 48px 32px; margin: 0 auto; }
+      .intro { display: grid; gap: 16px; border-bottom: 1px solid var(--nexo-line); padding-bottom: 32px; }
+      .eyebrow { color: var(--nexo-accent); font-size: 1rem; }
+      .muted { color: var(--nexo-muted); }
+      .section { margin-top: 48px; display: grid; gap: 24px; }
+      .section-heading { display: grid; gap: 8px; }
+      .palette { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 16px; }
+      .swatch { border: 1px solid var(--nexo-line); border-radius: var(--nexo-radius); overflow-wrap: anywhere; }
+      .swatch-color { height: 48px; background: var(--swatch); }
+      .swatch-caption { padding: 12px; display: grid; gap: 4px; }
+      .sample { padding: 32px; border: 1px solid var(--nexo-line); border-radius: var(--nexo-radius); background: var(--nexo-surface); }
+      .entry-sample { box-shadow: 0 0 18px rgb(69 255 121 / 0.08); }
+      .entry { max-width: 72ch; margin: 24px auto; display: grid; gap: 24px; }
+      .entry-question { color: var(--nexo-accent); font-size: clamp(1.25rem, 3vw, 1.5rem); font-weight: 400; }
+      .prompt-row { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; gap: 12px; }
+      .prompt { color: var(--nexo-accent); }
+      .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+      .stack { display: grid; gap: 16px; min-width: 0; }
+      .field { display: grid; gap: 8px; }
+      input, textarea, button {
+        font: inherit;
+        line-height: 1.4;
+        border: 1px solid var(--nexo-control-border);
+        border-radius: var(--nexo-radius);
+        background: var(--nexo-surface);
+        color: var(--nexo-text);
+      }
+      input, textarea { width: 100%; min-width: 0; min-height: 44px; padding: 12px; }
+      textarea { resize: vertical; min-height: 120px; }
+      input::placeholder, textarea::placeholder { color: var(--nexo-muted); opacity: 1; }
+      input[aria-invalid="true"] { border-color: var(--nexo-danger); }
+      button { min-height: 44px; min-width: 44px; padding: 12px 16px; cursor: pointer; }
+      button:hover:not(:disabled) { border-color: var(--nexo-accent); color: var(--nexo-accent); }
+      button:active:not(:disabled) { background: var(--nexo-bg); }
+      .primary { background: var(--nexo-accent); border-color: var(--nexo-accent); color: var(--nexo-bg); }
+      .primary:hover:not(:disabled) { background: var(--nexo-surface); }
+      .primary:active:not(:disabled) { background: var(--nexo-bg); color: var(--nexo-accent); }
+      .danger-button { color: var(--nexo-danger); border-color: var(--nexo-danger); }
+      button.danger-button:hover:not(:disabled) { color: var(--nexo-danger); border-color: var(--nexo-danger); background: var(--nexo-bg); }
+      button:disabled { cursor: default; color: var(--nexo-muted); border-color: var(--nexo-control-border); }
+      .actions { display: flex; flex-wrap: wrap; gap: 8px; }
+      .notice { padding: 12px 16px; border-left: 2px solid currentColor; overflow-wrap: anywhere; }
+      .success { color: var(--nexo-accent); }
+      .warning { color: var(--nexo-warning); }
+      .error { color: var(--nexo-danger); }
+      .list { list-style: none; margin: 0; padding: 0; }
+      .list li { padding: 16px 0; border-bottom: 1px solid var(--nexo-line); display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+      .list-item { display: grid; gap: 4px; min-width: 0; overflow-wrap: anywhere; }
+      .copy { max-width: 72ch; white-space: pre-wrap; overflow-wrap: anywhere; }
+      footer { margin-top: 48px; border-top: 1px solid var(--nexo-line); padding-top: 24px; }
+      @media (max-width: 48rem) {
+        .sheet { padding: 32px 16px; }
+        .palette { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        .grid { grid-template-columns: minmax(0, 1fr); }
+        .sample { padding: 24px 16px; }
+        .list li { align-items: flex-start; flex-direction: column; }
+        .entry { margin: 16px 0; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        *, *::before, *::after { animation: none; transition: none; scroll-behavior: auto; }
+      }
+      @media (forced-colors: active) {
+        .sample, .swatch, .list li, .intro, footer { border-color: CanvasText; }
+        input, textarea, button { border-color: ButtonText; }
+        :focus-visible { outline-color: Highlight; }
+        .entry-sample { box-shadow: none; }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="sheet">
+      <header class="intro">
+        <p class="eyebrow">Nexo / direção UI/UX</p>
+        <h1>Terminal de fósforo verde</h1>
+        <p class="copy">Documentação visual estática, sem API. Esta folha demonstra o estilo escolhido; os campos e botões são amostras e não executam operações do produto.</p>
+        <p class="muted">Fundo escuro, texto nítido, acentos verdes e espaço para ler. Use Tab para observar o foco nos controles.</p>
+        <p><a href="estilo-interface.md">Ler o guia visual completo</a></p>
+      </header>
+
+      <section class="section" aria-labelledby="palette-title">
+        <div class="section-heading">
+          <h2 id="palette-title">01 / Paleta</h2>
+          <p class="muted">A luminosidade destaca a intenção; o texto contínuo usa um verde mais suave.</p>
+        </div>
+        <div class="palette">
+          <div class="swatch"><div class="swatch-color" style="--swatch: var(--nexo-bg)"></div><div class="swatch-caption"><strong>Fundo</strong><code>#050805</code></div></div>
+          <div class="swatch"><div class="swatch-color" style="--swatch: var(--nexo-surface)"></div><div class="swatch-caption"><strong>Superfície</strong><code>#0C140F</code></div></div>
+          <div class="swatch"><div class="swatch-color" style="--swatch: var(--nexo-text)"></div><div class="swatch-caption"><strong>Texto</strong><code>#C7F5CF</code></div></div>
+          <div class="swatch"><div class="swatch-color" style="--swatch: var(--nexo-muted)"></div><div class="swatch-caption"><strong>Secundário</strong><code>#95B69D</code></div></div>
+          <div class="swatch"><div class="swatch-color" style="--swatch: var(--nexo-accent)"></div><div class="swatch-caption"><strong>Destaque</strong><code>#45FF79</code></div></div>
+          <div class="swatch"><div class="swatch-color" style="--swatch: var(--nexo-control-border)"></div><div class="swatch-caption"><strong>Controles</strong><code>#60896B</code></div></div>
+          <div class="swatch"><div class="swatch-color" style="--swatch: var(--nexo-line)"></div><div class="swatch-caption"><strong>Divisor</strong><code>#28422F</code></div></div>
+          <div class="swatch"><div class="swatch-color" style="--swatch: var(--nexo-focus)"></div><div class="swatch-caption"><strong>Foco</strong><code>#E6FFE9</code></div></div>
+          <div class="swatch"><div class="swatch-color" style="--swatch: var(--nexo-warning)"></div><div class="swatch-caption"><strong>Aviso</strong><code>#F4C56A</code></div></div>
+          <div class="swatch"><div class="swatch-color" style="--swatch: var(--nexo-danger)"></div><div class="swatch-caption"><strong>Erro</strong><code>#FF9B9B</code></div></div>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="entry-title">
+        <div class="section-heading">
+          <h2 id="entry-title">02 / Amostra isolada da entrada do jogador</h2>
+          <p class="muted">Somente o interior abaixo representa a composição inicial. A legenda desta folha não faz parte da tela do produto. O campo não interpreta entradas.</p>
+        </div>
+        <div class="sample entry-sample">
+          <div class="entry">
+            <label class="entry-question" for="entry-intent">O que você busca?</label>
+            <div class="prompt-row">
+              <span class="prompt" aria-hidden="true">&gt;</span>
+              <input id="entry-intent" type="text" autocomplete="off" spellcheck="false" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="components-title">
+        <div class="section-heading">
+          <h2 id="components-title">03 / Componentes e estados</h2>
+          <p class="muted">Amostras documentais separadas da entrada. Os rótulos e mensagens abaixo ilustram o tratamento visual, sem alterar os textos aprovados do produto.</p>
+        </div>
+        <div class="grid">
+          <div class="sample stack">
+            <h3>Escrita e foco</h3>
+            <div class="field"><label for="sample-name">Nome do enigma</label><input id="sample-name" type="text" value="Arquivo de estudo" /></div>
+            <div class="field"><label for="sample-statement">Enunciado</label><textarea id="sample-statement">Um texto pode ocupar mais de uma linha.
+A área pode ser redimensionada verticalmente.</textarea></div>
+            <div class="actions"><button class="primary" type="button">Salvar rascunho</button><button type="button">Cancelar</button></div>
+            <p class="muted">Botões de amostra, sem ação. A mesma fonte permanece legível no celular.</p>
+          </div>
+          <div class="sample stack">
+            <h3>Feedback com texto</h3>
+            <p class="notice success"><strong>Salvo.</strong> Confirmação próxima da operação.</p>
+            <p class="notice warning"><strong>Aviso.</strong> Explique a consequência antes da confirmação.</p>
+            <div class="field"><label for="sample-error">Campo com erro demonstrativo</label><input id="sample-error" type="text" aria-invalid="true" aria-describedby="error-message" /><p id="error-message" class="error">Erro: explique o que precisa ser corrigido.</p></div>
+            <p class="muted">Salvando… — estado textual ilustrativo, sem requisição em andamento.</p>
+            <div class="actions"><button type="button" disabled aria-describedby="disabled-reason">Publicar</button><button class="danger-button" type="button">Excluir enigma</button></div>
+            <p class="muted" id="disabled-reason">Publicar está desabilitado nesta amostra; a exclusão também não executa ação.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="author-title">
+        <div class="section-heading">
+          <h2 id="author-title">04 / Organização da área de criadores</h2>
+          <p class="muted">A autoria tem seu próprio contexto. Estes elementos não aparecem na entrada do jogador.</p>
+        </div>
+        <div class="sample stack">
+          <h3>Seus enigmas</h3>
+          <div class="actions"><button class="primary" type="button">Criar um novo nexo</button></div>
+          <ul class="list">
+            <li><div class="list-item"><strong>Arquivo de estudo</strong><span class="muted">Rascunho — exemplo documental</span></div><button type="button">Continuar rascunho</button></li>
+            <li><div class="list-item"><strong>Uma mensagem com nome suficientemente longo para conferir quebra de linha</strong><span class="muted">Publicado — exemplo documental</span></div><button type="button">Editar publicado</button></li>
+          </ul>
+          <p class="muted">Conteúdo fictício, sem ligação com contas ou enigmas reais.</p>
+        </div>
+      </section>
+
+      <footer class="stack">
+        <p>Identidade de terminal, leitura sem interferência.</p>
+        <p class="muted">Sem fontes remotas, bibliotecas, animação de digitação ou textura. Esta folha não implementa as telas do Nexo.</p>
+        <p><a href="estilo-interface.md">Consultar tokens e critérios de implementação</a></p>
+      </footer>
+    </main>
+  </body>
+</html>

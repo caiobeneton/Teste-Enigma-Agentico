@@ -52,6 +52,8 @@ React Router cuida das rotas; um reducer local cuida dos estados `busca`, `usuar
 
 A aparência usa CSS comum, fonte monoespaçada e formulários semânticos. O terminal interpreta intenções; não é um emulador de shell. A autoria usa campos textuais e controles de adicionar/remover, com ordenação de etapas somente no rascunho e nenhuma ação de reordenar dicas.
 
+O [guia visual canônico](../../../docs/design/estilo-interface.md) define a direção UI/UX, valores e usos dos tokens, componentes, estados e critérios de legibilidade e interação. A [folha visual documental](../../../docs/design/previa-interface.html) permite revisar essa direção sem representar telas integradas. Tarefas de interface passam pelo designer entre arquitetura e implementação e pela revisão visual posterior; este documento referencia o guia sem duplicar tokens. Os comportamentos das specs prevalecem sobre escolhas estéticas, que não autorizam funcionalidades, comandos ou navegação adicionais.
+
 Ao avançar, a etapa anterior é retirada da tela e do estado de apresentação; não fica em um histórico de terminal ou DOM oculto. A tela atual mostra suas dicas liberadas. Ao concluir, substitui-se o desafio pelo estado concluído e mensagem final. Respostas corretas e conteúdo de etapas bloqueadas nunca são carregados antecipadamente pelo cliente de jogo.
 
 Formulários mantêm alterações locais até salvar. Publicar opera sobre o snapshot persistido; havendo alterações locais, a interface pede salvamento primeiro. Navegação para fora de edição alterada recebe aviso de descarte. Sessão expirada preserva o formulário em memória enquanto se pede nova identificação; recarregar/fechar sem salvar continua sujeito à regra de salvamento manual.
@@ -191,7 +193,7 @@ Consultas de snapshots também usam leitura consistente do conteúdo e da versã
 
 ## Fluxo educacional e equipe — EDU-01
 
-Além das decisões técnicas acima, toda tarefa seguirá o fluxo de `docs/fluxo-de-trabalho.md` (caminho a partir da raiz): gerente identifica tarefa e dependências; arquiteto registra o desenho e seus motivos; programador web implementa e verifica; professor lê os arquivos efetivos e escreve o tutorial; gerente confere aceite, registro, tutorial e commit local. Os perfis persistentes ficam em `.codex/agents/`, com instruções gerais em `AGENTS.md`.
+Além das decisões técnicas acima, toda tarefa seguirá o fluxo de `docs/fluxo-de-trabalho.md` (caminho a partir da raiz): gerente identifica tarefa e dependências; arquiteto registra o desenho e seus motivos; em tarefas de interface, designer UI/UX define a solução conforme `docs/design/estilo-interface.md`; programador web implementa e verifica; designer revisa o resultado visual quando aplicável; professor lê os arquivos efetivos e as decisões técnicas e visuais e escreve o tutorial; gerente confere aceite, revisões, registro, tutorial e commit local. Tarefas exclusivamente de banco ou infraestrutura dispensam design. Os cinco perfis persistentes ficam em `.codex/agents/`, com instruções gerais em `AGENTS.md`.
 
 O registro por tarefa guarda arquitetura, decisões, verificações reais e revisão. O tutorial inclui ponto inicial no Git, pré-requisitos, comandos e arquivos, passos de construção, explicação de como e por que funcionam, resultados esperados e resolução de problemas. Os modelos e convenções de caminhos estão em `docs/modelos/` e no fluxo. Os tutoriais seguem as dependências de aprendizado desde o bootstrap; não são adiados para a entrega do piloto.
 

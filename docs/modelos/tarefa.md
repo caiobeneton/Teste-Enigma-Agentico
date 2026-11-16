@@ -3,10 +3,10 @@
 ## Identificação e andamento
 
 - Origem: <link para a tarefa OpenSpec ou solicitação de processo>.
-- Status: <pendente | em arquitetura | em implementação | em tutorial | em revisão | pronta para commit | aguardando commit | concluída>.
+- Status: <pendente | em arquitetura | em design (quando aplicável) | em implementação | em tutorial | em revisão | pronta para commit | aguardando commit | concluída>.
 - Dependências: <IDs, links e critérios para iniciar>.
 - Ponto inicial: <hash do commit-base e alterações locais preexistentes relevantes>.
-- Papéis: <quem atuou como gerente, arquiteto, programador web e professor>.
+- Papéis: <quem atuou como gerente, arquiteto, designer UI/UX quando aplicável, programador web e professor; justificar quando design não se aplica>.
 - Tutorial: <link relativo>.
 - Commit de entrega: localizar pelo trailer `Task: <ID completo>`.
 
@@ -17,6 +17,10 @@
 ## Arquitetura
 
 <Antes da implementação: requisitos/specs consultados, dependências, desenho, contratos, invariantes, arquivos previstos, decisões e motivos, alternativas e riscos. Adaptar a tarefas documentais sem inventar aplicação.>
+
+## Design UI/UX e revisão visual — quando aplicável
+
+<Antes da implementação de interface: referências e guia consultados, solução visual e de interação, motivos, componentes/estados, responsividade, teclado/foco/legibilidade e critérios observáveis entregues ao programador. Referenciar os tokens do guia canônico, sem duplicá-los. Após implementar: registrar revisão do designer, o que foi inspecionado ou medido, limitações e correções. Para tarefa exclusivamente de banco ou infraestrutura, justificar não aplicabilidade.>
 
 ## Implementação ou alteração documental
 

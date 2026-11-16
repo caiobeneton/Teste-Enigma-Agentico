@@ -8,16 +8,18 @@ Este projeto deve ensinar a construir uma aplicação web. Toda tarefa concluíd
 - Consulte `openspec/changes/` para descobrir a mudança ativa e suas tarefas; após arquivamento, consulte `openspec/specs/` e o histórico correspondente. Não crie uma segunda lista de tarefas de produto.
 - Respeite proposta, design e specs vigentes. Aprovar planejamento não autoriza implementar o MVP inteiro; execute apenas o trabalho solicitado.
 - Use `docs/modelos/tarefa.md` e `docs/modelos/tutorial.md`. Registro, tutorial e código precisam corresponder ao mesmo resultado verificado.
+- Para tarefas de interface, leia o [guia visual canônico](docs/design/estilo-interface.md), sua [folha visual documental](docs/design/previa-interface.html) e as [referências preservadas](docs/referencias/interface/). As specs determinam o comportamento; escolhas estéticas não autorizam novos recursos.
 
 ## Equipe e delegação
 
-Use os quatro agentes definidos em `.codex/agents/`: `arquiteto`, `programador_web`, `professor` e `gerente`. O agente principal pode assumir o papel de gerente e delegar os demais, respeitando o limite de agentes disponível. Se os perfis não estiverem carregados na sessão, leia o TOML correspondente e transmita suas instruções ao subagente; informe qualquer impossibilidade de delegação.
+Use os cinco agentes definidos em `.codex/agents/`: `arquiteto`, `designer_ui_ux`, `programador_web`, `professor` e `gerente`. Acione o designer quando a tarefa afetar interface ou experiência; tarefas exclusivamente de banco ou infraestrutura não dependem desse papel. O agente principal pode assumir o papel de gerente e delegar os demais, respeitando o limite de agentes disponível. Se os perfis não estiverem carregados na sessão, leia o TOML correspondente e transmita suas instruções ao subagente; informe qualquer impossibilidade de delegação.
 
 1. **Gerente:** seleciona a tarefa autorizada, confere dependências, abre o registro e coordena as entregas.
 2. **Arquiteto:** analisa a tarefa, desenha a solução proporcional ao problema e registra decisões, alternativas, contratos e critérios de verificação antes da implementação.
-3. **Programador web:** implementa a solução aprovada, realiza as verificações pertinentes e entrega ao professor os arquivos, comandos e resultados reais.
-4. **Professor:** lê a implementação efetiva e escreve o tutorial em português, explicando conceitos, cada passo, seu motivo e como reproduzir e verificar o resultado.
-5. **Gerente:** revisa os critérios técnicos, a fidelidade didática, o registro e os links; somente então atualiza a tarefa e faz o commit local correspondente.
+3. **Designer UI/UX, quando aplicável:** entre arquitetura e implementação, define a solução visual e de interação conforme o guia, registra motivos e critérios verificáveis e passa o desenho ao programador; depois revisa o resultado visual implementado.
+4. **Programador web:** implementa a solução aprovada, realiza as verificações pertinentes e entrega ao designer e ao professor os arquivos, comandos e resultados reais.
+5. **Professor:** lê a implementação efetiva e as decisões técnicas e visuais e escreve o tutorial em português, explicando conceitos, cada passo, seu motivo e como reproduzir e verificar o resultado.
+6. **Gerente:** revisa os critérios técnicos, a revisão visual quando aplicável, a fidelidade didática, o registro e os links; somente então atualiza a tarefa e faz o commit local correspondente.
 
 As etapas dependentes são sequenciais. Paralelize somente trabalho independente, com arquivos e responsabilidades delimitados. Apenas o gerente controla marcações finais, staging e commits; não permita commits concorrentes. Os especialistas devolvem problemas ao responsável e repetem a revisão após correções.
 

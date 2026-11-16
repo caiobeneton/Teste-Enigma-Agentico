@@ -48,7 +48,10 @@ A última linha deve imprimir `function function`: a fábrica retorna uma aplica
 - [Planejamento e tarefas do MVP](openspec/changes/define-puzzle-platform-mvp/tasks.md)
 - [Proposta](openspec/changes/define-puzzle-platform-mvp/proposal.md), [design](openspec/changes/define-puzzle-platform-mvp/design.md) e [specs](openspec/changes/define-puzzle-platform-mvp/specs/)
 - [Como a equipe trabalha e conclui tarefas](docs/fluxo-de-trabalho.md)
+- [Guia visual canônico](docs/design/estilo-interface.md), [folha visual documental](docs/design/previa-interface.html) e [referências de interface preservadas](docs/referencias/interface/)
 - [Tutoriais em ordem de estudo](docs/tutoriais/README.md)
 - [Instruções para agentes](AGENTS.md) e [perfis especializados](.codex/agents/)
 
-Para solicitar execução, indique uma tarefa ou um conjunto delimitado. O gerente coordena arquiteto, programador web e professor, verifica as entregas e cria o commit local da tarefa concluída. A equipe atua durante as sessões de trabalho; os arquivos não iniciam processos de acompanhamento em segundo plano.
+Para solicitar execução, indique uma tarefa ou um conjunto delimitado. A equipe tem cinco agentes: arquiteto, designer UI/UX, programador web, professor e gerente. Em tarefas que afetem interface ou experiência, o designer define a solução visual entre arquitetura e implementação e revisa o resultado conforme o guia. Tarefas exclusivamente de banco ou infraestrutura dispensam essa etapa. O gerente coordena os especialistas, verifica as entregas e cria o commit local da tarefa concluída. A equipe atua durante as sessões de trabalho; os arquivos não iniciam processos de acompanhamento em segundo plano.
+
+O guia e a folha visual são documentação de design; sua entrega não significa que o estilo já tenha sido aplicado ao frontend nem que as telas de jogo e autoria estejam implementadas.

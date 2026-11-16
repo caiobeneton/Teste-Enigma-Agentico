@@ -6,7 +6,7 @@ Implementar segundo `design.md` e as quatro capacidades em `specs/`. As marcaç�
 
 Todas as tarefas abaixo, sem exceção, incluem registro e tutorial próprio em português, didático e reproduzível, explicando passo a passo **como e por que cada etapa foi implementada**. Isso também se aplica às tarefas de documentação, testes e operação. Não é necessário repetir esse requisito em cada linha.
 
-Seguir `AGENTS.md` e `docs/fluxo-de-trabalho.md` a partir da raiz: gerente coordena; arquiteto analisa e desenha; programador web implementa e verifica; professor lê o resultado e escreve as explicações; gerente revisa as entregas e faz o commit local. Use os modelos em `docs/modelos/`.
+Seguir `AGENTS.md` e `docs/fluxo-de-trabalho.md` a partir da raiz: gerente coordena; arquiteto analisa e desenha; designer UI/UX define a solução de interface conforme `docs/design/estilo-interface.md` quando aplicável; programador web implementa e verifica; designer revisa o resultado visual; professor lê o resultado e explica os motivos técnicos e visuais pertinentes; gerente revisa as entregas e faz o commit local. Tarefas exclusivamente de banco ou infraestrutura dispensam designer. Use os modelos em `docs/modelos/`.
 
 Para cada ID, criar `docs/registros/define-puzzle-platform-mvp/<id>.md` e `docs/tutoriais/define-puzzle-platform-mvp/<id>.md`, ligar o registro à tarefa original e atualizar `docs/tutoriais/README.md`. O registro inclui dependências, decisões de arquitetura, arquivos, comandos/resultados reais e revisões; o tutorial inclui pré-requisitos, ponto inicial no Git, passos completos, motivos e verificação. O commit usa o trailer `Task: define-puzzle-platform-mvp/<id>`.
 

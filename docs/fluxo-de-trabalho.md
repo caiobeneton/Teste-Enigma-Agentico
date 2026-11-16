@@ -29,6 +29,7 @@ Quando uma tarefa mudar código, comandos ou configuração ensinados em capítu
 | Agente | Responsabilidade e entrega | Limite |
 | --- | --- | --- |
 | `arquiteto` | Lê requisitos e dependências, desenha a solução, justifica decisões e define critérios de aceite no registro. | Não implementa nem conclui tarefas. |
+| `designer_ui_ux` | Em tarefas de interface, define a solução visual e de interação e seus motivos antes da implementação, e revisa o resultado visual depois. | Segue as specs e o guia; não cria funcionalidades nem atesta conformidade sem evidência. |
 | `programador_web` | Implementa o desenho, executa verificações e entrega arquivos e sequência reproduzível ao professor. | Não conclui nem faz commit. |
 | `professor` | Lê o resultado efetivo, explica conceitos e escreve/revisa o tutorial contra os arquivos e evidências. | Não inventa comportamento, execução ou resultados. |
 | `gerente` | Coordena, acompanha o status, confere aceite, registro e tutorial e faz o commit local. | Não atesta conclusão com entregas ou validações faltando. |
@@ -37,14 +38,17 @@ Os perfis persistentes estão em `.codex/agents/*.toml`, com nome, descrição e
 
 O agente principal pode ser o gerente. Com poucos slots, execute especialistas em sequência. Só paralelize trabalho independente e delimite arquivos por responsável. Todo staging e commit passa pelo gerente.
 
+O [guia visual](design/estilo-interface.md) é a fonte canônica de valores e usos de cores, tipografia, espaçamento, componentes e estados. A [folha visual](design/previa-interface.html) permite examinar a proposta como documentação, sem representar uma aplicação integrada. As [referências originais](referencias/interface/) são preservadas; não copiar seus estilos para a aplicação sem avaliar as decisões do guia. Os demais documentos apontam para o guia em vez de manter tabelas de tokens concorrentes. Contratos e comportamentos das specs prevalecem sobre a estética.
+
 ## Etapas e passagens de responsabilidade
 
 1. **Pendente → em arquitetura.** O gerente lê a tarefa autorizada, seus pré-requisitos e o estado do Git; abre o registro com o modelo e informa ao arquiteto ID, escopo e arquivos. Arquitetura aprovada significa coerência com requisitos vigentes; dúvidas de produto voltam ao usuário, decisões rotineiras seguem o design.
-2. **Em arquitetura → em implementação.** O arquiteto registra solução, alternativas e motivos, dependências, contratos, invariantes, arquivos e aceite observável. O gerente passa esse material ao programador. Em trabalho documental, o desenho é a estrutura de documentos e suas relações.
-3. **Em implementação → em tutorial.** O programador entrega o resultado, o diff e comandos/verificações reais com ambiente e resultados. Divergências relevantes voltam ao arquiteto antes da passagem. Uma falha não vira sucesso por ter sido documentada.
-4. **Em tutorial → em revisão.** O professor lê os arquivos reais e o diff, redige o tutorial pelo modelo, verifica os exemplos e informa o grau de reprodução executado. Explica conceitos, os motivos das escolhas, falhas comuns e resultados esperados. Lacunas voltam ao programador ou arquiteto.
-5. **Em revisão → pronta para commit.** O gerente confere todos os critérios abaixo, os links e o índice. Verificações não aplicáveis recebem justificativa; verificações necessárias não executadas mantêm a tarefa pendente. Falta de permissão Git deixa o status `aguardando commit`.
-6. **Pronta para commit → concluída.** O gerente prepara a marcação `[x]` no `tasks.md` e o status final do registro imediatamente antes de criar o commit que os reúne às entregas. A conclusão só é confirmada após o commit existir e seu conteúdo ser conferido. Se o commit falhar, desfaz somente suas marcações finais, mantém as entregas e registra `aguardando commit`; nunca descarta trabalho para limpar o Git.
+2. **Em arquitetura → em design, quando aplicável, ou em implementação.** O arquiteto registra solução, alternativas e motivos, dependências, contratos, invariantes, arquivos e aceite observável. Se a tarefa afeta interface ou experiência, o gerente passa esse material ao designer; em tarefas exclusivamente de banco ou infraestrutura, registra que design não se aplica e segue ao programador. Em trabalho documental, o desenho arquitetural é a estrutura de documentos e suas relações.
+3. **Em design → em implementação.** O designer consulta o guia e as referências pertinentes, define os componentes, estados, hierarquia, comportamento responsivo e critérios de teclado, foco e legibilidade aplicáveis. Registra motivos e entrega ao programador referências de tokens, desenho e critérios observáveis, sem duplicar a fonte canônica ou contrariar as specs. Dúvidas de comportamento retornam ao arquiteto e ao gerente.
+4. **Em implementação → em tutorial.** O programador entrega o resultado, o diff e comandos/verificações reais com ambiente e resultados. Quando houve design, o designer revisa a implementação visual contra o desenho e registra o que inspecionou, mediu ou apenas propôs antes da passagem ao professor. Divergências relevantes voltam ao arquiteto ou ao designer; falhas concretas retornam ao programador. Uma falha não vira sucesso por ter sido documentada.
+5. **Em tutorial → em revisão.** O professor lê os arquivos reais, o diff e as decisões do designer quando aplicáveis, redige o tutorial pelo modelo, verifica os exemplos e informa o grau de reprodução executado. Explica conceitos, os motivos das escolhas técnicas e visuais, falhas comuns e resultados esperados. Lacunas voltam ao programador, arquiteto ou designer.
+6. **Em revisão → pronta para commit.** O gerente confere todos os critérios abaixo, incluindo entrega e revisão visual quando aplicáveis, os links e o índice. Verificações não aplicáveis recebem justificativa; verificações necessárias não executadas mantêm a tarefa pendente. Falta de permissão Git deixa o status `aguardando commit`.
+7. **Pronta para commit → concluída.** O gerente prepara a marcação `[x]` no `tasks.md` e o status final do registro imediatamente antes de criar o commit que os reúne às entregas. A conclusão só é confirmada após o commit existir e seu conteúdo ser conferido. Se o commit falhar, desfaz somente suas marcações finais, mantém as entregas e registra `aguardando commit`; nunca descarta trabalho para limpar o Git.
 
 O gerente mantém o usuário informado durante o trabalho. Interrupções deixam no registro o estado e o próximo passo para outra sessão retomar.
 
@@ -52,6 +56,7 @@ O gerente mantém o usuário informado durante o trabalho. Interrupções deixam
 
 - A solução atende à tarefa e às specs aplicáveis, sem ampliar o escopo silenciosamente.
 - A arquitetura e os motivos das escolhas estão registrados na escala adequada.
+- Em tarefas de interface, há handoff do designer com critérios observáveis e revisão visual do resultado, com evidências e limites. Em tarefas sem interface, a não aplicabilidade é justificada; não exigir design de banco ou infraestrutura.
 - Verificações pertinentes foram executadas e registradas com comandos, ambiente, resultados e limitações. Teste real, inspeção por leitura e simulação estão identificados separadamente.
 - O registro identifica origem, dependências, arquivos, entregas por papel, tutorial e aceite do gerente.
 - O tutorial ensina cada etapa: ponto inicial, pré-requisitos, comando ou edição, caminho do arquivo, como funciona, por que foi escolhido e como reconhecer sucesso.
