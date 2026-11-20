@@ -12,6 +12,8 @@
 
 <Explique o desenho do arquiteto em linguagem simples, conceitos novos, responsabilidades, alternativas e motivos das escolhas.>
 
+<Aplique o [critério de simplicidade](../fluxo-de-trabalho.md#código-simples-para-quem-está-aprendendo) aos exemplos. Apresente cada conceito da tecnologia antes de usá-lo. Se um recurso avançado for indispensável, explique por que a tarefa precisa dele e como conferir seu efeito.>
+
 ## Passo 1 — <uma alteração concreta>
 
 **O que e onde fazer:** <caminho exato, arquivo novo ou existente, edição completa ou trecho contextualizado suficiente; comandos reais na ordem, com shell e diretório>.

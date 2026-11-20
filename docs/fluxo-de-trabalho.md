@@ -6,6 +6,17 @@ Toda e qualquer tarefa concluída deve ter registro e um tutorial próprio, did�
 
 O tutorial é uma entrega da própria tarefa, não uma atividade opcional ao final do MVP. Uma tarefa incompleta continua pendente mesmo que seu código já funcione. Para tarefas marcadas antes desta regra, o gerente deve auditar registro e tutorial e registrar lacunas antes de considerá-las conformes; não inventar explicações históricas sem consultar o Git.
 
+## Código simples para quem está aprendendo
+
+O EDU-01 exige que todo código produzido ou alterado use a solução mais simples que atenda aos requisitos e preserve a correção, a segurança e o comportamento esperado. Escreva para quem está aprendendo as tecnologias do projeto, sem presumir experiência prévia com elas. Aplique o critério ao frontend, ao backend, ao SQL, às migrações, aos scripts, aos testes, às configurações executáveis e aos exemplos de documentação.
+
+- Use nomes que descrevam o que cada variável guarda e o que cada função faz.
+- Escreva as operações em etapas explícitas com recursos básicos ou usuais da tecnologia. Evite atalhos que concentrem várias operações em uma expressão difícil de ler.
+- Mantenha funções, camadas, padrões e dependências apenas quando resolvem uma necessidade da tarefa.
+- Substitua um recurso avançado sempre que houver uma alternativa mais simples que atenda aos mesmos requisitos. Quando o requisito ou a tecnologia exigir esse recurso, limite seu uso ao trecho necessário. Registre por que ele é indispensável e explique o conceito no tutorial antes de usá-lo.
+
+Na revisão, leia o código e siga o caminho das entradas, das decisões, das saídas ou efeitos e dos erros pertinentes. Ao validar um campo, por exemplo, localize onde o valor é lido, qual condição indica erro e o que acontece quando o valor é válido. Se um trecho dificultar essa leitura e houver uma forma mais direta que cumpra os requisitos, reescreva o trecho antes do aceite.
+
 ## Rastreabilidade sem duplicar a fila
 
 O `tasks.md` da mudança OpenSpec é a fila canônica do produto. Preserve seus IDs. Para a mudança atual, uma tarefa como `1.1` é identificada integralmente por `define-puzzle-platform-mvp/1.1`.
@@ -28,11 +39,11 @@ Quando uma tarefa mudar código, comandos ou configuração ensinados em capítu
 
 | Agente | Responsabilidade e entrega | Limite |
 | --- | --- | --- |
-| `arquiteto` | Lê requisitos e dependências, desenha a solução, justifica decisões e define critérios de aceite no registro. | Não implementa nem conclui tarefas. |
+| `arquiteto` | Lê requisitos e dependências, escolhe a solução mais simples que os atende e registra motivos e critérios de aceite. | Não implementa nem conclui tarefas. |
 | `designer_ui_ux` | Em tarefas de interface, define a solução visual e de interação e seus motivos antes da implementação, e revisa o resultado visual depois. | Segue as specs e o guia; não cria funcionalidades nem atesta conformidade sem evidência. |
-| `programador_web` | Implementa o desenho, executa verificações e entrega arquivos e sequência reproduzível ao professor. | Não conclui nem faz commit. |
-| `professor` | Lê o resultado efetivo, explica conceitos e escreve/revisa o tutorial contra os arquivos e evidências. | Não inventa comportamento, execução ou resultados. |
-| `gerente` | Coordena, acompanha o status, confere aceite, registro e tutorial e faz o commit local. | Não atesta conclusão com entregas ou validações faltando. |
+| `programador_web` | Implementa o desenho, aplica o critério de simplicidade ao código alterado, executa verificações e entrega arquivos e passos reproduzíveis ao professor. | Não conclui nem faz commit. |
+| `professor` | Lê o resultado e escreve o tutorial com base nos arquivos e evidências. Pede revisão de trechos com complexidade evitável e explica os conceitos novos antes de usá-los. | Não inventa comportamento, execução ou resultados. |
+| `gerente` | Coordena, acompanha o status, confere o aceite, incluindo a revisão de simplicidade, e faz o commit local. | Não atesta conclusão com entregas ou validações faltando. |
 
 Os perfis persistentes estão em `.codex/agents/*.toml`, com nome, descrição e instruções. Seguem o formato de [agentes personalizados do Codex](https://learn.chatgpt.com/docs/agent-configuration/subagents#custom-agents), sem fixar modelo ou substituir permissões do ambiente. O `AGENTS.md` solicita sua utilização nas sessões do projeto. Se a sessão não disponibilizar os perfis pelo nome, o gerente pode delegar transmitindo o conteúdo do perfil. Esses arquivos não são um serviço de execução contínua nem um bloqueio automático de Git.
 
@@ -56,6 +67,7 @@ O gerente mantém o usuário informado durante o trabalho. Interrupções deixam
 
 - A solução atende à tarefa e às specs aplicáveis, sem ampliar o escopo silenciosamente.
 - A arquitetura e os motivos das escolhas estão registrados na escala adequada.
+- Em tarefas com código, o registro indica quem revisou a simplicidade e quais trechos conferiu. A leitura do código permite seguir a sequência de operações. Cada recurso avançado indispensável tem justificativa no registro e explicação no tutorial.
 - Em tarefas de interface, há handoff do designer com critérios observáveis e revisão visual do resultado, com evidências e limites. Em tarefas sem interface, a não aplicabilidade é justificada; não exigir design de banco ou infraestrutura.
 - Verificações pertinentes foram executadas e registradas com comandos, ambiente, resultados e limitações. Teste real, inspeção por leitura e simulação estão identificados separadamente.
 - O registro identifica origem, dependências, arquivos, entregas por papel, tutorial e aceite do gerente.

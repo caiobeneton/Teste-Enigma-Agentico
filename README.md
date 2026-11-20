@@ -2,6 +2,8 @@
 
 Uma plataforma de enigmas textuais construída como material de aprendizado: cada tarefa concluída deve ensinar, passo a passo, **como e por que** a solução foi implementada e como reproduzir o resultado.
 
+Todo código produzido ou alterado, incluindo testes, scripts e exemplos, deve usar a solução mais simples que cumpra os requisitos. Escrevemos para quem está aprendendo as tecnologias do projeto. Consulte o [critério de simplicidade do EDU-01](docs/fluxo-de-trabalho.md#código-simples-para-quem-está-aprendendo).
+
 O MVP está planejado com JavaScript, React, Vite, Express e SQLite. O frontend React/Vite apresenta a pergunta inicial; Express fornece o endpoint de saúde e entrega o build. Persistência, autenticação, autoria e jogo serão implementados nas tarefas seguintes.
 
 ## Executar a base local

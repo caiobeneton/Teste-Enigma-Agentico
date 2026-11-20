@@ -5,6 +5,8 @@ context: |
   EDU-01: toda tarefa concluída, incluindo código, configuração, testes,
   documentação e correções, exige registro e tutorial didático reproduzível
   explicando passo a passo como e por que cada etapa foi implementada.
+  Use a solução mais simples em todo código produzido ou alterado.
+  Revise a legibilidade para iniciantes conforme docs/fluxo-de-trabalho.md.
   Seguir AGENTS.md e docs/fluxo-de-trabalho.md. A equipe é composta por
   arquiteto, designer_ui_ux, programador_web, professor e gerente.
   Tarefas de interface incluem desenho e revisão do designer, usando

@@ -2,6 +2,8 @@
 
 Este projeto deve ensinar a construir uma aplicação web. Toda tarefa concluída, inclusive documentação, configuração, testes, correções e refatorações, exige registro e tutorial didático, passo a passo, de **como e por que** cada etapa foi realizada.
 
+Todo código produzido ou alterado deve usar a solução mais simples que cumpra os requisitos e seja legível para quem está aprendendo as tecnologias do projeto. Aplique o [critério de simplicidade](docs/fluxo-de-trabalho.md#código-simples-para-quem-está-aprendendo) antes de aprovar a entrega.
+
 ## Fontes de verdade
 
 - Leia `README.md` e `docs/fluxo-de-trabalho.md` antes de trabalhar.

@@ -18,6 +18,8 @@
 
 <Antes da implementação: requisitos/specs consultados, dependências, desenho, contratos, invariantes, arquivos previstos, decisões e motivos, alternativas e riscos. Adaptar a tarefas documentais sem inventar aplicação.>
 
+<Se a tarefa produzir ou alterar código, registre por que a solução é a mais simples que atende aos requisitos. Justifique cada recurso avançado indispensável. Consulte o [critério de simplicidade](../fluxo-de-trabalho.md#código-simples-para-quem-está-aprendendo).>
+
 ## Design UI/UX e revisão visual — quando aplicável
 
 <Antes da implementação de interface: referências e guia consultados, solução visual e de interação, motivos, componentes/estados, responsividade, teclado/foco/legibilidade e critérios observáveis entregues ao programador. Referenciar os tokens do guia canônico, sem duplicá-los. Após implementar: registrar revisão do designer, o que foi inspecionado ou medido, limitações e correções. Para tarefa exclusivamente de banco ou infraestrutura, justificar não aplicabilidade.>
@@ -39,6 +41,8 @@
 ## Revisão do gerente
 
 <Responsável, critérios conferidos, links, registro e tutorial, escopo do commit e decisão de aceite. Só confirmar conclusão após conferir a existência e o conteúdo do commit.>
+
+<Se houver código, indique quem revisou a simplicidade, quais trechos conferiu e o que foi ajustado durante a revisão.>
 
 ## Pendências e retomada
 
