@@ -1,6 +1,6 @@
 # Projeto como tutorial de programação web
 
-Este projeto deve ensinar a construir uma aplicação web. Toda tarefa concluída, inclusive documentação, configuração, testes, correções e refatorações, exige registro e tutorial didático, passo a passo, de **como e por que** cada etapa foi realizada.
+Cada tarefa concluída exige um registro e um tutorial curto em português. O tutorial descreve o que foi entregue e indica os arquivos e o registro.
 
 Todo código produzido ou alterado deve usar a solução mais simples que cumpra os requisitos e seja legível para quem está aprendendo as tecnologias do projeto. Aplique o [critério de simplicidade](docs/fluxo-de-trabalho.md#código-simples-para-quem-está-aprendendo) antes de aprovar a entrega.
 
@@ -20,18 +20,18 @@ Use os cinco agentes definidos em `.codex/agents/`: `arquiteto`, `designer_ui_ux
 2. **Arquiteto:** analisa a tarefa, desenha a solução proporcional ao problema e registra decisões, alternativas, contratos e critérios de verificação antes da implementação.
 3. **Designer UI/UX, quando aplicável:** entre arquitetura e implementação, define a solução visual e de interação conforme o guia, registra motivos e critérios verificáveis e passa o desenho ao programador; depois revisa o resultado visual implementado.
 4. **Programador web:** implementa a solução aprovada, realiza as verificações pertinentes e entrega ao designer e ao professor os arquivos, comandos e resultados reais.
-5. **Professor:** lê a implementação efetiva e as decisões técnicas e visuais e escreve o tutorial em português, explicando conceitos, cada passo, seu motivo e como reproduzir e verificar o resultado.
-6. **Gerente:** revisa os critérios técnicos, a revisão visual quando aplicável, a fidelidade didática, o registro e os links; somente então atualiza a tarefa e faz o commit local correspondente.
+5. **Professor:** confere os arquivos e as evidências da entrega e escreve o tutorial curto.
+6. **Gerente:** confere os critérios técnicos, a revisão visual quando aplicável, o registro, o tutorial e os links. Atualiza a tarefa e faz o commit local.
 
 As etapas dependentes são sequenciais. Paralelize somente trabalho independente, com arquivos e responsabilidades delimitados. Apenas o gerente controla marcações finais, staging e commits; não permita commits concorrentes. Os especialistas devolvem problemas ao responsável e repetem a revisão após correções.
 
 ## Critério obrigatório de conclusão
 
-Só conclua uma tarefa quando houver solução entregue, verificações adequadas com evidências reais, registro rastreável, tutorial reproduzível revisado e commit local conferido. Não marque `[x]` com tutorial ou registro faltando. Siga o protocolo de commit de `docs/fluxo-de-trabalho.md`, inclusive em falhas de Git.
+Só conclua uma tarefa quando houver solução entregue, verificações adequadas com evidências reais, registro rastreável, tutorial curto revisado e commit local conferido. Siga o protocolo de commit de `docs/fluxo-de-trabalho.md`, inclusive em falhas de Git.
 
-- Explique pré-requisitos, diretório de execução, arquivos, comandos exatos, resultados esperados, motivos das escolhas e problemas comuns. Não use comandos de scripts ainda inexistentes como se funcionassem.
-- Cada tarefa tem seu registro e seu tutorial, mesmo quando reutiliza conceitos de capítulos anteriores por links. Se já houver tarefa marcada sem essas entregas, registre a lacuna e complete-a antes de atestar sua conclusão pelo novo critério.
-- Ao alterar um procedimento ensinado anteriormente, atualize os tutoriais afetados ou explicite a versão e o ponto inicial do capítulo, com link para o procedimento vigente. Registre essa decisão na tarefa atual.
+- Inclua comandos simples no tutorial quando ajudarem a usar ou conferir a entrega. Indique onde executá-los e o resultado esperado.
+- Se já houver uma tarefa marcada sem registro ou tutorial, complete a documentação antes de atestar a conclusão.
+- Ao alterar um procedimento anterior, atualize os tutoriais afetados ou indique a versão de referência e o procedimento vigente. Registre a decisão na tarefa atual.
 - Diferencie teste automatizado, inspeção manual, simulação e integração real. Nunca invente resultados ou declare reprodução que não foi executada.
 - Mantenha dados reais, senhas, tokens, bancos de execução e certificados privados fora dos exemplos e commits.
 - Preserve alterações do usuário. Use staging com caminhos explícitos e revise o diff antes do commit. Não faça push ou reescreva histórico sem solicitação.

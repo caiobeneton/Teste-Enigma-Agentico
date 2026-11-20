@@ -10,9 +10,9 @@ Criar uma plataforma comunitária de enigmas inspirada em Alternate Reality Game
 
 ### Requisito transversal de entrega educacional — EDU-01
 
-Por solicitação de 16/11/2026, o projeto também será um tutorial de programação web. Toda tarefa concluída, inclusive documentação, configuração, testes, correções e refatorações, exige registro e tutorial próprio, didático e reproduzível, explicando passo a passo como e por que cada etapa foi implementada. O tutorial deve refletir os arquivos efetivamente entregues e as verificações realmente realizadas.
+Cada tarefa concluída tem um registro e um tutorial curto em português. O tutorial descreve a entrega, indica os arquivos e aponta para o registro com as evidências.
 
-A equipe passa a trabalhar com cinco papéis: arquiteto para analisar tarefas e desenhar a solução; designer UI/UX para definir e revisar a solução visual e de interação nas tarefas de interface; programador web para implementar; professor para ler o resultado e explicar sua construção, incluindo os motivos visuais aplicáveis; gerente para acompanhar dependências e andamento, conferir registros, revisões e tutoriais e realizar um commit local por tarefa concluída. O designer atua entre arquitetura e implementação e na revisão visual, sem ser dependência de tarefas exclusivamente de banco ou infraestrutura. As regras e critérios estão em `docs/fluxo-de-trabalho.md`, na raiz do repositório, e os perfis em `.codex/agents/`. O guia visual canônico é `docs/design/estilo-interface.md`; não altera as funcionalidades nem os contratos das quatro specs.
+A equipe trabalha com cinco papéis. O arquiteto define a solução e o programador implementa e verifica. Nas tarefas de interface, o designer UI/UX define e revisa a solução visual conforme `docs/design/estilo-interface.md`. O professor resume a entrega. O gerente coordena o trabalho, confere o aceite e cria o commit local. Consulte `docs/fluxo-de-trabalho.md` para conhecer os critérios e `.codex/agents/` para encontrar os perfis.
 
 Esse requisito se aplica a todas as tarefas existentes e futuras, sem alterar as funcionalidades do MVP nem autorizar sua implementação nesta solicitação. As quatro capacidades funcionais em `specs/` permanecem com seu escopo atual.
 

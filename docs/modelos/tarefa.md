@@ -34,9 +34,9 @@
 | --- | --- | --- | --- | --- |
 | <teste, manual, leitura, reprodução> | <exato> | <versões pertinentes> | <resultado observado> | <nenhuma ou descrição> |
 
-## Entrega didática
+## Tutorial
 
-<O professor leu quais arquivos/diff, quais passos foram reproduzidos, se o ambiente foi limpo, quais dependências e explicações foram conferidas e quais lacunas foram corrigidas. Não declarar uma execução que não ocorreu.>
+<Indique quem conferiu o tutorial e as fontes consultadas. Registre comandos executados e ajustes relevantes, quando houver.>
 
 ## Revisão do gerente
 

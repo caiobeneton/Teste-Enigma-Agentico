@@ -1,39 +1,14 @@
-# <ID completo> — <o que vamos aprender>
+# <ID completo>. <Título da entrega>
 
-## Objetivo e ponto de partida
+## O que foi entregue
 
-<Problema e comportamento antes/depois. O que o leitor aprenderá. Registro da tarefa e commit-base exato; dependências e links para capítulos anteriores.>
+<Resuma o resultado em poucas frases ou tópicos.>
 
-## Pré-requisitos
+## Arquivos
 
-<Ferramentas e versões verificadas, conhecimentos prévios explicados por links, shell e diretório de execução. Como preparar exemplos e dados descartáveis, sem segredos reais. Diferenciar requisitos já disponíveis dos que serão criados.>
+- <Links para os arquivos principais. Aponte para o código no arquivo em que foi implementado.>
+- <Link para o registro da tarefa.>
 
-## Solução e motivos
+## Como usar ou conferir
 
-<Explique o desenho do arquiteto em linguagem simples, conceitos novos, responsabilidades, alternativas e motivos das escolhas.>
-
-<Aplique o [critério de simplicidade](../fluxo-de-trabalho.md#código-simples-para-quem-está-aprendendo) aos exemplos. Apresente cada conceito da tecnologia antes de usá-lo. Se um recurso avançado for indispensável, explique por que a tarefa precisa dele e como conferir seu efeito.>
-
-## Passo 1 — <uma alteração concreta>
-
-**O que e onde fazer:** <caminho exato, arquivo novo ou existente, edição completa ou trecho contextualizado suficiente; comandos reais na ordem, com shell e diretório>.
-
-**Como funciona:** <explique as partes relevantes do código, configuração ou documento, e como se conectam>.
-
-**Por que fazer assim:** <problema resolvido, justificativa e alternativa quando ajudar o aprendizado>.
-
-**Como conferir:** <comando/procedimento, resultado esperado e o que ele comprova>.
-
-<Repita essa estrutura para todos os passos necessários, sem pular instalação, configuração, ligação entre componentes ou preparação de dados. Não basta mandar copiar arquivos prontos sem explicar seu conteúdo.>
-
-## Verificação do resultado completo
-
-<Percurso reproduzível, entradas, saídas esperadas, resultados realmente obtidos, ambiente e limites da verificação. Diferenciar teste automático, verificação manual e simulação.>
-
-## Problemas comuns
-
-<Sintoma, causa e correção segura. Exemplos fictícios e descartáveis. Indicar o que fazer se um comando ou dependência não estiver disponível.>
-
-## Arquivos finais e continuidade
-
-<Links para os arquivos, registro da tarefa e tutorial anterior/próximo quando existir. Localizar a versão de entrega com o trailer Git da tarefa. Identificar capítulos anteriores afetados: atualizar suas instruções ou explicitar sua versão/ponto inicial e indicar o procedimento vigente. Resumir conceitos aprendidos e limitações sem anunciar funcionalidades futuras como prontas.>
+<Se for útil, indique o comando ou a ação, onde executar e o resultado esperado. Omita esta seção quando a descrição e os links forem suficientes.>

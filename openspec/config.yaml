@@ -1,10 +1,8 @@
 schema: spec-driven
 
 context: |
-  Este projeto deve se tornar um tutorial de programação web em português.
-  EDU-01: toda tarefa concluída, incluindo código, configuração, testes,
-  documentação e correções, exige registro e tutorial didático reproduzível
-  explicando passo a passo como e por que cada etapa foi implementada.
+  EDU-01 exige registro e tutorial curto em português por tarefa.
+  O tutorial descreve a entrega e indica os arquivos e o registro.
   Use a solução mais simples em todo código produzido ou alterado.
   Revise a legibilidade para iniciantes conforme docs/fluxo-de-trabalho.md.
   Seguir AGENTS.md e docs/fluxo-de-trabalho.md. A equipe é composta por
@@ -18,7 +16,7 @@ rules:
   proposal:
     - Preservar EDU-01 como requisito transversal de entrega, sem confundi-lo com funcionalidades do produto.
   design:
-    - Considerar a sequência de aprendizado, as decisões explicáveis e a reprodução local ao desenhar a solução.
+    - Priorizar soluções com código simples e verificações locais.
     - Em tarefas de interface, referenciar docs/design/estilo-interface.md sem duplicar tokens; preservar a precedência dos comportamentos das specs.
   tasks:
     - Toda tarefa só pode ser concluída com registro, tutorial próprio revisado, verificações pertinentes e commit local conferido, conforme docs/fluxo-de-trabalho.md.

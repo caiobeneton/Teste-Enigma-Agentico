@@ -2,9 +2,9 @@
 
 ## Requisito EDU-01
 
-Toda e qualquer tarefa concluída deve ter registro e um tutorial próprio, didático e reproduzível, em português, que explique passo a passo **como e por que cada etapa foi implementada**. A regra inclui implementação, correção, refatoração, testes, documentação, configuração e tarefas de processo. Documentar somente o resultado ou listar arquivos não satisfaz o requisito.
+Cada tarefa concluída tem um registro e um tutorial curto em português. Resuma o que foi entregue, indique os arquivos principais e inclua o link para o registro. Acrescente uma instrução simples de uso ou verificação quando ajudar o leitor. Use o [modelo de tutorial](modelos/tutorial.md).
 
-O tutorial é uma entrega da própria tarefa, não uma atividade opcional ao final do MVP. Uma tarefa incompleta continua pendente mesmo que seu código já funcione. Para tarefas marcadas antes desta regra, o gerente deve auditar registro e tutorial e registrar lacunas antes de considerá-las conformes; não inventar explicações históricas sem consultar o Git.
+As decisões técnicas e as evidências de verificação ficam no registro. O gerente confere as duas entregas antes de aprovar a tarefa.
 
 ## Código simples para quem está aprendendo
 
@@ -13,7 +13,7 @@ O EDU-01 exige que todo código produzido ou alterado use a solução mais simpl
 - Use nomes que descrevam o que cada variável guarda e o que cada função faz.
 - Escreva as operações em etapas explícitas com recursos básicos ou usuais da tecnologia. Evite atalhos que concentrem várias operações em uma expressão difícil de ler.
 - Mantenha funções, camadas, padrões e dependências apenas quando resolvem uma necessidade da tarefa.
-- Substitua um recurso avançado sempre que houver uma alternativa mais simples que atenda aos mesmos requisitos. Quando o requisito ou a tecnologia exigir esse recurso, limite seu uso ao trecho necessário. Registre por que ele é indispensável e explique o conceito no tutorial antes de usá-lo.
+- Substitua um recurso avançado sempre que houver uma alternativa mais simples que atenda aos mesmos requisitos. Quando o requisito ou a tecnologia exigir esse recurso, limite seu uso ao trecho necessário e registre o motivo.
 
 Na revisão, leia o código e siga o caminho das entradas, das decisões, das saídas ou efeitos e dos erros pertinentes. Ao validar um campo, por exemplo, localize onde o valor é lido, qual condição indica erro e o que acontece quando o valor é válido. Se um trecho dificultar essa leitura e houver uma forma mais direta que cumpra os requisitos, reescreva o trecho antes do aceite.
 
@@ -33,7 +33,7 @@ O `tasks.md` da mudança OpenSpec é a fila canônica do produto. Preserve seus 
 
 O registro contém status detalhado, arquitetura, decisões, responsáveis por papel, verificações e revisão. Ele referencia a tarefa original e o tutorial. Use links relativos e o ID completo ao comunicar trabalho. Novas tarefas fora da fila recebem o próximo ID `PROC` livre; não use essa categoria para ocultar funcionalidade que deveria estar no OpenSpec.
 
-Quando uma tarefa mudar código, comandos ou configuração ensinados em capítulos anteriores, o professor identifica os tutoriais afetados. Atualize-os junto da mudança ou mantenha o capítulo histórico com versão e ponto inicial explícitos, indicando o capítulo que ensina o procedimento vigente. Registre a escolha e os links na tarefa atual; não deixe um comando antigo apresentado como instrução atual.
+Quando uma tarefa alterar um procedimento anterior, atualize os tutoriais afetados ou indique a versão de referência e o procedimento vigente. Registre a decisão na tarefa atual.
 
 ## Equipe
 
@@ -41,8 +41,8 @@ Quando uma tarefa mudar código, comandos ou configuração ensinados em capítu
 | --- | --- | --- |
 | `arquiteto` | Lê requisitos e dependências, escolhe a solução mais simples que os atende e registra motivos e critérios de aceite. | Não implementa nem conclui tarefas. |
 | `designer_ui_ux` | Em tarefas de interface, define a solução visual e de interação e seus motivos antes da implementação, e revisa o resultado visual depois. | Segue as specs e o guia; não cria funcionalidades nem atesta conformidade sem evidência. |
-| `programador_web` | Implementa o desenho, aplica o critério de simplicidade ao código alterado, executa verificações e entrega arquivos e passos reproduzíveis ao professor. | Não conclui nem faz commit. |
-| `professor` | Lê o resultado e escreve o tutorial com base nos arquivos e evidências. Pede revisão de trechos com complexidade evitável e explica os conceitos novos antes de usá-los. | Não inventa comportamento, execução ou resultados. |
+| `programador_web` | Implementa o desenho, aplica o critério de simplicidade e entrega os arquivos alterados e os resultados das verificações ao professor. | Não conclui nem faz commit. |
+| `professor` | Confere a entrega e escreve o tutorial curto com base nos arquivos e evidências. Pede revisão de trechos com complexidade evitável. | Não inventa comportamento, execução ou resultados. |
 | `gerente` | Coordena, acompanha o status, confere o aceite, incluindo a revisão de simplicidade, e faz o commit local. | Não atesta conclusão com entregas ou validações faltando. |
 
 Os perfis persistentes estão em `.codex/agents/*.toml`, com nome, descrição e instruções. Seguem o formato de [agentes personalizados do Codex](https://learn.chatgpt.com/docs/agent-configuration/subagents#custom-agents), sem fixar modelo ou substituir permissões do ambiente. O `AGENTS.md` solicita sua utilização nas sessões do projeto. Se a sessão não disponibilizar os perfis pelo nome, o gerente pode delegar transmitindo o conteúdo do perfil. Esses arquivos não são um serviço de execução contínua nem um bloqueio automático de Git.
@@ -57,7 +57,7 @@ O [guia visual](design/estilo-interface.md) é a fonte canônica de valores e us
 2. **Em arquitetura → em design, quando aplicável, ou em implementação.** O arquiteto registra solução, alternativas e motivos, dependências, contratos, invariantes, arquivos e aceite observável. Se a tarefa afeta interface ou experiência, o gerente passa esse material ao designer; em tarefas exclusivamente de banco ou infraestrutura, registra que design não se aplica e segue ao programador. Em trabalho documental, o desenho arquitetural é a estrutura de documentos e suas relações.
 3. **Em design → em implementação.** O designer consulta o guia e as referências pertinentes, define os componentes, estados, hierarquia, comportamento responsivo e critérios de teclado, foco e legibilidade aplicáveis. Registra motivos e entrega ao programador referências de tokens, desenho e critérios observáveis, sem duplicar a fonte canônica ou contrariar as specs. Dúvidas de comportamento retornam ao arquiteto e ao gerente.
 4. **Em implementação → em tutorial.** O programador entrega o resultado, o diff e comandos/verificações reais com ambiente e resultados. Quando houve design, o designer revisa a implementação visual contra o desenho e registra o que inspecionou, mediu ou apenas propôs antes da passagem ao professor. Divergências relevantes voltam ao arquiteto ou ao designer; falhas concretas retornam ao programador. Uma falha não vira sucesso por ter sido documentada.
-5. **Em tutorial → em revisão.** O professor lê os arquivos reais, o diff e as decisões do designer quando aplicáveis, redige o tutorial pelo modelo, verifica os exemplos e informa o grau de reprodução executado. Explica conceitos, os motivos das escolhas técnicas e visuais, falhas comuns e resultados esperados. Lacunas voltam ao programador, arquiteto ou designer.
+5. **Em tutorial → em revisão.** O professor lê os arquivos, o diff e as evidências. Resume a entrega pelo modelo e confere os links e as instruções incluídas. Lacunas voltam ao responsável.
 6. **Em revisão → pronta para commit.** O gerente confere todos os critérios abaixo, incluindo entrega e revisão visual quando aplicáveis, os links e o índice. Verificações não aplicáveis recebem justificativa; verificações necessárias não executadas mantêm a tarefa pendente. Falta de permissão Git deixa o status `aguardando commit`.
 7. **Pronta para commit → concluída.** O gerente prepara a marcação `[x]` no `tasks.md` e o status final do registro imediatamente antes de criar o commit que os reúne às entregas. A conclusão só é confirmada após o commit existir e seu conteúdo ser conferido. Se o commit falhar, desfaz somente suas marcações finais, mantém as entregas e registra `aguardando commit`; nunca descarta trabalho para limpar o Git.
 
@@ -67,13 +67,12 @@ O gerente mantém o usuário informado durante o trabalho. Interrupções deixam
 
 - A solução atende à tarefa e às specs aplicáveis, sem ampliar o escopo silenciosamente.
 - A arquitetura e os motivos das escolhas estão registrados na escala adequada.
-- Em tarefas com código, o registro indica quem revisou a simplicidade e quais trechos conferiu. A leitura do código permite seguir a sequência de operações. Cada recurso avançado indispensável tem justificativa no registro e explicação no tutorial.
+- Em tarefas com código, o registro indica quem revisou a simplicidade e quais trechos conferiu. A leitura do código permite seguir a sequência de operações. Cada recurso avançado indispensável tem justificativa no registro.
 - Em tarefas de interface, há handoff do designer com critérios observáveis e revisão visual do resultado, com evidências e limites. Em tarefas sem interface, a não aplicabilidade é justificada; não exigir design de banco ou infraestrutura.
 - Verificações pertinentes foram executadas e registradas com comandos, ambiente, resultados e limitações. Teste real, inspeção por leitura e simulação estão identificados separadamente.
 - O registro identifica origem, dependências, arquivos, entregas por papel, tutorial e aceite do gerente.
-- O tutorial ensina cada etapa: ponto inicial, pré-requisitos, comando ou edição, caminho do arquivo, como funciona, por que foi escolhido e como reconhecer sucesso.
-- Um leitor consegue reconstruir a mudança a partir do ponto inicial indicado. Inclua trechos completos suficientes, ordem das edições e dependências; para código extenso, divida em passos e referencie o arquivo integral no commit.
-- Professor e gerente conferiram fidelidade entre explicações e resultado. Registrar quem revisou e se houve execução dos passos ou apenas leitura; não confundir promessa de reprodução com reprodução verificada.
+- O tutorial resume o que foi entregue em português e indica os arquivos principais e o registro.
+- Professor e gerente conferiram a correspondência entre o tutorial e a entrega. As evidências da revisão ficam no registro.
 - Links entre tarefa, registro e tutorial, e índice de leitura, estão atualizados.
 - O commit local reúne as entregas e tem o trailer da tarefa; seu conteúdo foi verificado.
 
@@ -108,4 +107,4 @@ As 41 tarefas do planejamento inicial mantêm seus IDs; consulte suas marcaçõe
 5. Interfaces (`6.*`, `7.*`) precisam dos respectivos contratos e usam a API real para atestar integração; esboços isolados não provam integração.
 6. Entrega e piloto (`8.*`) dependem do percurso integrado e da verificação em produção local prevista no design.
 
-Os tutoriais acompanham cada tarefa desde o primeiro bloco. A tarefa `8.4` prepara instruções de uso do piloto; ela não substitui os tutoriais de programação.
+Os tutoriais acompanham cada tarefa desde o primeiro bloco. A tarefa `8.4` prepara instruções de uso do piloto.

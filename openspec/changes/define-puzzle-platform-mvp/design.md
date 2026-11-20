@@ -14,7 +14,7 @@ Este documento contém decisões do planejamento técnico e padrões propostos d
 - Manter validação, autorização e persistência no servidor, com contratos explícitos entre front-end e API.
 - Preservar unicidade, avanço individual, bloqueio global de respostas e exclusão integral sob concorrência.
 - Permitir testar as regras com banco real temporário e os percursos pelo navegador.
-- Entregar cada tarefa como capítulo didático reproduzível, com registro, explicação de como e por que cada etapa foi implementada e commit local conferido, conforme EDU-01.
+- Entregar registro, tutorial curto e commit local conferido para cada tarefa, conforme EDU-01.
 
 **Non-Goals:**
 
@@ -193,9 +193,9 @@ Consultas de snapshots também usam leitura consistente do conteúdo e da versã
 
 ## Fluxo educacional e equipe — EDU-01
 
-Além das decisões técnicas acima, toda tarefa seguirá o fluxo de `docs/fluxo-de-trabalho.md` (caminho a partir da raiz): gerente identifica tarefa e dependências; arquiteto registra o desenho e seus motivos; em tarefas de interface, designer UI/UX define a solução conforme `docs/design/estilo-interface.md`; programador web implementa e verifica; designer revisa o resultado visual quando aplicável; professor lê os arquivos efetivos e as decisões técnicas e visuais e escreve o tutorial; gerente confere aceite, revisões, registro, tutorial e commit local. Tarefas exclusivamente de banco ou infraestrutura dispensam design. Os cinco perfis persistentes ficam em `.codex/agents/`, com instruções gerais em `AGENTS.md`.
+Toda tarefa segue `docs/fluxo-de-trabalho.md` na raiz do projeto. O arquiteto define a solução e o programador implementa e verifica. Em tarefas de interface, o designer define e revisa a solução visual conforme `docs/design/estilo-interface.md`. O professor resume a entrega no tutorial. O gerente confere o aceite e cria o commit local. Os perfis ficam em `.codex/agents/` e as instruções gerais em `AGENTS.md`.
 
-O registro por tarefa guarda arquitetura, decisões, verificações reais e revisão. O tutorial inclui ponto inicial no Git, pré-requisitos, comandos e arquivos, passos de construção, explicação de como e por que funcionam, resultados esperados e resolução de problemas. Os modelos e convenções de caminhos estão em `docs/modelos/` e no fluxo. Os tutoriais seguem as dependências de aprendizado desde o bootstrap; não são adiados para a entrega do piloto.
+O registro guarda arquitetura, decisões e verificações reais. O tutorial descreve o resultado, indica os arquivos principais e aponta para o registro. Quando útil, inclui uma instrução simples de uso ou verificação. Os modelos ficam em `docs/modelos/`.
 
 EDU-01 é um critério de engenharia e ensino, incluindo tarefas documentais e correções; não acrescenta telas ou funcionalidades ao produto. `[x]` só atesta uma tarefa com entregas verificadas e commit confirmado. As definições dos agentes orientam sessões ativas, sem criar um serviço de acompanhamento contínuo ou validação automática de qualidade.
 
