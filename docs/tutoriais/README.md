@@ -8,5 +8,6 @@
 6. [PROC-03. Código simples](PROC-03.md).
 7. [PROC-04. Tutoriais curtos](PROC-04.md).
 8. [PROC-05. Revisão EGM do MVP](PROC-05.md).
+9. [PROC-06. Repasse do projeto e revisão EGM](PROC-06.md).
 
 Cada capítulo aponta para o registro da tarefa, com as verificações e a referência ao commit de entrega. Para rodar o projeto, consulte as [instruções do README](../../README.md#executar-a-base-local).
