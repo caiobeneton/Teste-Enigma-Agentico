@@ -1,0 +1,62 @@
+schema: spec-driven
+
+context: |
+  EDU-01 exige registro e tutorial curto em português por tarefa.
+  O tutorial descreve a entrega e indica os arquivos e o registro.
+  Use a solução mais simples em todo código produzido ou alterado.
+  Revise a legibilidade para iniciantes conforme docs/fluxo-de-trabalho.md.
+  Seguir AGENTS.md e docs/fluxo-de-trabalho.md. A equipe é composta por
+  arquiteto, designer_ui_ux, programador_web, professor e gerente.
+  Tarefas de interface incluem desenho e revisão do designer, usando
+  docs/design/estilo-interface.md como guia canônico, sem alterar contratos
+  das specs por estética. Banco e infraestrutura não dependem de design.
+  O gerente verifica as entregas e realiza o commit local por tarefa concluída.
+
+rules:
+  proposal:
+    - Preservar EDU-01 como requisito transversal de entrega, sem confundi-lo com funcionalidades do produto.
+  design:
+    - Priorizar soluções com código simples e verificações locais.
+    - Em tarefas de interface, referenciar docs/design/estilo-interface.md sem duplicar tokens; preservar a precedência dos comportamentos das specs.
+  tasks:
+    - Toda tarefa só pode ser concluída com registro, tutorial próprio revisado, verificações pertinentes e commit local conferido, conforme docs/fluxo-de-trabalho.md.
+    - Preservar IDs estáveis e a fila canônica; tutoriais acompanham cada tarefa e não ficam adiados para o final do projeto.
+
+operations:
+  apply:
+    guidance:
+      - Coordenar arquiteto, designer_ui_ux quando houver interface, programador_web, professor e gerente; seguir AGENTS.md e EDU-01 antes de marcar tarefas como concluídas.
+  archive:
+    guidance:
+      - Conferir registros, tutoriais, evidências e commits das tarefas antes do arquivamento; planejamento completo não significa implementação concluída.
+
+# Project context (optional)
+# Add only constraints that should guide OpenSpec artifacts and workflows.
+# Include constraints an agent cannot infer by reading the code.
+# Keep general project documentation and discoverable codebase facts out.
+# Example:
+#   context: |
+#     Designs and tasks must cover Windows, macOS, and Linux
+#     Write all artifacts in Spanish
+
+# Per-artifact rules (optional)
+# Add custom rules for specific artifacts.
+# Example:
+#   rules:
+#     proposal:
+#       - Keep proposals under 500 words
+#       - Always state what is out of scope
+#     tasks:
+#       - Break tasks into chunks of max 2 hours
+
+# Per-operation guidance (optional)
+# Add advisory guidance for how apply and archive work should be conducted.
+# This is separate from artifact rules above.
+# Example:
+#   operations:
+#     apply:
+#       guidance:
+#         - Keep test summaries concise
+#     archive:
+#       guidance:
+#         - Summarize the archive outcome before finishing
